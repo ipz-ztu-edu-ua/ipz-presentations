@@ -625,12 +625,12 @@
 			<!-- Слайд 11: Метод стабільної емоції -->
 			<section>
 				<h2>Метод визначення стабільної емоції</h2>
-				<div style="display: flex; gap: 14px; font-size: 0.65em;">
-					<div style="flex: 3; text-align: center;">
+				<div style="display: flex; gap: 24px; font-size: 0.65em; padding: 0 30px;">
+					<div style="flex: 3; display: flex; align-items: center; justify-content: center;">
 						<img src="examples/assets/2_3_stable.png"
-							style="max-height: 420px; max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+							style="max-height: 520px; max-width: 95%; border-radius: 8px;">
 					</div>
-					<div style="flex: 2;">
+					<div style="flex: 2; display: flex; flex-direction: column; justify-content: center;">
 						<div class="formula-box" style="font-size: 0.95em; padding: 10px 14px;">
 							<p style="margin: 0;">S<sub>l</sub>(t) = d · S<sub>l</sub>(t−1) + (1−d) · v<sub>l</sub>(t)
 							</p>
@@ -657,7 +657,7 @@
 				<h2>Лексичні ресурси і потік замін</h2>
 				<div style="text-align: center;">
 					<img src="examples/assets/2_5_synon.png"
-						style="max-height: 400px; max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+						style="max-height: 340px; max-width: 100%; border-radius: 8px;">
 				</div>
 				<div style="display: flex; gap: 10px; font-size: 0.63em; margin-top: 12px;">
 					<div class="highlight-box" style="flex: 1; padding: 8px 12px;">
@@ -749,33 +749,34 @@
 
 			<!-- Слайд 13: Узагальнений метод -->
 			<section>
-				<h2>Узагальнений метод забезпечення вебдоступності</h2>
-				<div class="formula-box" style="font-size: 0.72em; padding: 6px 14px; margin-bottom: 8px;">
-					y* = arg max<sub>y∈Y</sub> J(y) = ΔІКД(x, y, S) − λ₁·ΔLen − λ₂·Density − λ₃·SemanticRisk
-				</div>
-				<div style="display: flex; gap: 12px; font-size: 0.58em;">
-					<div style="flex: 2; display: flex; align-items: center;">
+				<h2 style="white-space: nowrap;">Узагальнений метод забезпечення вебдоступності</h2>
+				<div style="display: flex; gap: 20px; font-size: 0.58em;">
+					<div style="flex: 3; display: flex; align-items: center;">
 						<img src="examples/assets/2_9.png"
-							style="max-height: 420px; max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+							style="max-height: 520px; max-width: 100%; border-radius: 8px;">
 					</div>
-					<div
-						style="flex: 3; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; align-content: start;">
-						<div class="highlight-box" style="padding: 6px 10px;">
-							<strong>Аналітичний контур</strong><br>ІКД, детекція бар'єрів за 7 категоріями з
-							координатами
+					<div style="flex: 3; display: flex; flex-direction: column; gap: 6px; justify-content: flex-start;">
+						<div class="formula-box" style="font-size: 1.1em; padding: 8px 14px;">
+							y* = arg max<sub>y∈Y</sub> J(y) = ΔІКД(x, y, S) − λ₁·ΔLen − λ₂·Density − λ₃·SemanticRisk
 						</div>
-						<div class="highlight-box" style="padding: 6px 10px;">
-							<strong>Модуль трансформацій</strong><br>Лексична заміна · пояснення · синтаксис ·
-							генеративний резерв
+						<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+							<div class="highlight-box" style="padding: 6px 10px;">
+								<strong>Аналітичний контур</strong><br>ІКД, детекція бар'єрів за 7 категоріями з
+								координатами
+							</div>
+							<div class="highlight-box" style="padding: 6px 10px;">
+								<strong>Модуль трансформацій</strong><br>Лексична заміна · пояснення · синтаксис ·
+								генеративний резерв
+							</div>
+							<div class="highlight-box-orange" style="padding: 6px 10px;">
+								<strong>Контроль якості</strong><br>Повторна оцінка ІКД, семантична еквівалентність, журнал
+								змін
+							</div>
+							<div class="highlight-box" style="padding: 6px 10px;">
+								<strong>3 режими</strong><br>Документний · сторінковий · курсорний
+							</div>
 						</div>
 						<div class="highlight-box-orange" style="padding: 6px 10px;">
-							<strong>Контроль якості</strong><br>Повторна оцінка ІКД, семантична еквівалентність, журнал
-							змін
-						</div>
-						<div class="highlight-box" style="padding: 6px 10px;">
-							<strong>3 режими</strong><br>Документний · сторінковий · курсорний
-						</div>
-						<div class="highlight-box-orange" style="grid-column: 1 / -1; padding: 6px 10px;">
 							<strong>Стабільна емоція</strong> — контекстний параметр: негативний консенсус → допоміжний
 							режим
 						</div>
@@ -785,33 +786,33 @@
 
 			<!-- Слайд 14: Трирівнева архітектура -->
 			<section>
-				<h2>Архітектура програмного комплексу</h2>
-				<div style="display: flex; gap: 14px; font-size: 0.6em;">
+				<h2 style="margin-bottom: 5px;">Архітектура програмного комплексу</h2>
+				<div style="display: flex; gap: 14px; font-size: 0.65em;">
 					<div style="flex: 3; display: flex; align-items: center;">
 						<img src="examples/assets/3_2_.png"
-							style="max-height: 480px; max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+							style="max-height: 525px; max-width: 100%; border-radius: 8px;">
 					</div>
-					<div style="flex: 2; display: flex; flex-direction: column; gap: 8px; justify-content: stretch;">
+					<div style="flex: 2; display: flex; flex-direction: column; gap: 8px; justify-content: space-evenly;">
 						<div class="impl-card"
-							style="flex: 1; border-left: 4px solid var(--ztu-blue); padding: 10px 12px; display: flex; flex-direction: column; justify-content: center;">
+							style="border-left: 4px solid var(--ztu-blue); padding: 20px 14px;">
 							<strong class="ztu-blue">Клієнтський рівень</strong>
 							<p style="margin: 4px 0 0 0;">Редактор · пагінація · підсвітка бар'єрів · вибір режиму · TTS
 							</p>
 						</div>
 						<div class="impl-card"
-							style="flex: 1; border-left: 4px solid var(--ztu-orange); padding: 10px 12px; display: flex; flex-direction: column; justify-content: center;">
+							style="border-left: 4px solid var(--ztu-orange); padding: 20px 14px;">
 							<strong class="ztu-orange">Сервіс аналізу та спрощення</strong>
 							<p style="margin: 4px 0 0 0;">Пакетна детекція · ІКД · ітераційне спрощення · словникові
 								заміни · синтаксис</p>
 						</div>
 						<div class="impl-card"
-							style="flex: 1; border-left: 4px solid var(--ztu-red); padding: 10px 12px; display: flex; flex-direction: column; justify-content: center;">
+							style="border-left: 4px solid var(--ztu-red); padding: 20px 14px;">
 							<strong class="ztu-red">Сервіс емоцій</strong>
 							<p style="margin: 4px 0 0 0;">Відеопотік · FER · двоканальна стабілізація · негативний
 								консенсус</p>
 						</div>
 						<div class="impl-card"
-							style="flex: 1; border-left: 4px solid var(--ztu-green); padding: 10px 12px; display: flex; flex-direction: column; justify-content: center;">
+							style="border-left: 4px solid var(--ztu-green); padding: 20px 14px;">
 							<strong class="ztu-green">Рівень моделей та ресурсів</strong>
 							<p style="margin: 4px 0 0 0;">NLP-конвеєр · морфоаналіз · 7 словників · термінодетектор ·
 								LLM-резерв</p>
@@ -826,13 +827,13 @@
 
 			<!-- Слайд 15: Алгоритм ітераційного спрощення -->
 			<section>
-				<h2>Алгоритм ітераційного спрощення</h2>
-				<div style="display: flex; gap: 14px; font-size: 0.6em; align-items: center;">
-					<div style="flex: 3;">
+				<h2 style="margin-bottom: 5px;">Алгоритм ітераційного спрощення</h2>
+				<div style="display: flex; gap: 24px; font-size: 0.6em; align-items: center; margin-top: -20px;">
+					<div style="flex: 3; display: flex; align-items: center; justify-content: center;">
 						<img src="examples/assets/2_8.png"
-							style="max-height: 460px; max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+							style="max-height: 580px; max-width: 95%; border-radius: 8px;">
 					</div>
-					<div style="flex: 2; display: flex; flex-direction: column; gap: 8px;">
+					<div style="flex: 2; display: flex; flex-direction: column; gap: 5px;">
 						<div class="impl-card" style="border-left: 4px solid var(--ztu-blue); padding: 8px 10px;">
 							<strong class="ztu-blue">Три точки входу</strong>
 							<p style="margin: 3px 0 0 0;">document — весь текст; page — видима сторінка; cursor — вікно
@@ -864,11 +865,11 @@
 
 			<!-- Слайд 16: Три режими роботи -->
 			<section>
-				<h2>Сценарії клієнтської взаємодії</h2>
-				<div style="display: flex; gap: 14px; font-size: 0.6em; align-items: center;">
-					<div style="flex: 3;">
+				<h2 style="margin-bottom: 5px;">Сценарії клієнтської взаємодії</h2>
+				<div style="display: flex; gap: 24px; font-size: 0.6em; align-items: center; margin-top: -20px;">
+					<div style="flex: 3; display: flex; align-items: center; justify-content: center;">
 						<img src="examples/assets/3_3.png"
-							style="max-height: 460px; max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+							style="max-height: 560px; max-width: 95%; border-radius: 8px;">
 					</div>
 					<div style="flex: 2; display: flex; flex-direction: column; gap: 8px;">
 						<div class="impl-card" style="border-left: 4px solid var(--ztu-blue); padding: 8px 10px;">
@@ -902,72 +903,53 @@
 
 			<!-- Слайд 17: Інтерфейс програмного комплексу -->
 			<section>
-				<h2>Інтерфейс програмного комплексу</h2>
-				<div style="display: flex; gap: 14px; font-size: 0.6em; align-items: center;">
-					<div style="flex: 3; display: flex; align-items: center;">
+				<h2 style="margin-bottom: 5px;">Інтерфейс програмного комплексу</h2>
+				<div style="display: flex; gap: 14px; font-size: 0.6em;">
+					<div style="flex: 1; display: flex; align-items: flex-start;">
 						<img src="examples/assets/Interface.png"
-							style="max-height: 540px; max-width: 100%; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.15);">
+							style="max-height: 560px; max-width: 100%; border-radius: 8px;">
 					</div>
-					<div
-						style="flex: 2; display: flex; flex-direction: column; gap: 4px; font-size: 0.95em; text-align: left;">
-						<div
-							style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-							<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">1.</span> Заголовок
-							системи
+					<div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
+						<img src="examples/assets/black.png"
+							style="max-width: 100%; border-radius: 8px;">
+						<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 14px; font-size: 0.95em; text-align: left;">
+							<div style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
+								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">1.</span> Заголовок системи
+							</div>
+							<div style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
+								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">2.</span> Поле введення тексту
+							</div>
+							<div style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
+								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">3.</span> Параметри спрощення
+							</div>
+							<div style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
+								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">4.</span> Область аналізу
+							</div>
+							<div style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
+								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">5.</span> TTS, стоп-слова, LLM
+							</div>
+							<div style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
+								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">6.</span> Текст із маркуванням
+							</div>
+							<div style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
+								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">7.</span> Навігація: сторінки
+							</div>
+							<div style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
+								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">8.</span> Перевірка тексту
+							</div>
+							<div style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
+								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">9.</span> POS-аналіз
+							</div>
+							<div style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
+								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">10.</span> Коефіцієнти ІКД
+							</div>
+							<div style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
+								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">11.</span> Лінгвістичні метрики
+							</div>
+							<div style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0;">
+								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">12.</span> Футер та посилання
+							</div>
 						</div>
-						<div
-							style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-							<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">2.</span> Поле
-							введення тексту
-						</div>
-						<div
-							style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-							<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">3.</span> Параметри
-							спрощення
-						</div>
-						<div
-							style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-							<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">4.</span> Область
-							аналізу
-						</div>
-						<div
-							style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-							<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">5.</span> TTS,
-							стоп-слова, LLM
-						</div>
-						<div
-							style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-							<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">6.</span> Текст із
-							маркуванням
-						</div>
-						<div
-							style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-							<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">7.</span>
-							Навігація: сторінки / слова
-						</div>
-						<div
-							style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-							<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">8.</span> Перевірка
-							тексту
-						</div>
-						<div
-							style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-							<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">9.</span>
-							POS-аналіз
-						</div>
-						<div
-							style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-							<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">10.</span>
-							Коефіцієнти ІКД
-						</div>
-						<div
-							style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-							<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">11.</span>
-							Лінгвістичні метрики
-						</div>
-						<div style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0;"><span
-								style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">12.</span> Футер та
-							посилання</div>
 					</div>
 				</div>
 			</section>
@@ -982,7 +964,7 @@
 				<div style="font-size: 0.62em; display: flex; gap: 14px;">
 					<div style="flex: 1;">
 						<img src="examples/assets/exp01_convergence_chart.png"
-							style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+							style="width: 100%; border-radius: 8px;">
 					</div>
 					<div style="flex: 1;">
 						<p style="margin: 0 0 8px 0;">Контрольований корпус: <strong>10 текстів</strong>, 5 категорій
@@ -1031,7 +1013,7 @@
 				<div style="font-size: 0.58em;">
 					<div style="text-align: center; margin-bottom: 6px;">
 						<img src="examples/assets/exp04_semantic_chart.png"
-							style="max-height: 280px; max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+							style="max-height: 280px; max-width: 100%; border-radius: 8px;">
 					</div>
 					<div style="display: flex; gap: 10px; align-items: start;">
 						<table class="compact-table" style="font-size: 0.9em; flex: 1;">
@@ -1077,7 +1059,7 @@
 				<div style="font-size: 0.58em;">
 					<div style="text-align: center; margin-bottom: 6px;">
 						<img src="examples/assets/exp05_sensitivity_chart.png"
-							style="max-height: 280px; max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+							style="max-height: 280px; max-width: 100%; border-radius: 8px;">
 					</div>
 					<div style="display: flex; gap: 10px; align-items: start;">
 						<div style="flex: 1; display: flex; flex-direction: column; gap: 3px;">
@@ -1110,7 +1092,7 @@
 				<div style="font-size: 0.58em;">
 					<div style="text-align: center; margin-bottom: 6px;">
 						<img src="examples/assets/exp06_cross_genre_chart.png"
-							style="max-height: 280px; max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+							style="max-height: 280px; max-width: 100%; border-radius: 8px;">
 					</div>
 					<div style="display: flex; gap: 10px; align-items: start;">
 						<table class="compact-table" style="font-size: 0.9em; flex: 1;">
@@ -1169,7 +1151,7 @@
 				<div style="font-size: 0.58em;">
 					<div style="text-align: center; margin-bottom: 6px;">
 						<img src="examples/assets/exp07_scalability_chart.png"
-							style="max-height: 280px; max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+							style="max-height: 280px; max-width: 100%; border-radius: 8px;">
 					</div>
 					<div style="display: flex; gap: 10px; align-items: start;">
 						<table class="compact-table" style="font-size: 0.9em; flex: 1;">
@@ -1211,7 +1193,7 @@
 				<div style="font-size: 0.58em;">
 					<div style="text-align: center; margin-bottom: 6px;">
 						<img src="examples/assets/exp09_syntactic_chart.png"
-							style="max-height: 280px; max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+							style="max-height: 280px; max-width: 100%; border-radius: 8px;">
 					</div>
 					<div style="display: flex; gap: 10px; align-items: start;">
 						<table class="compact-table" style="font-size: 0.9em; flex: 1;">
@@ -1253,7 +1235,7 @@
 				<div style="font-size: 0.58em;">
 					<div style="text-align: center; margin-bottom: 6px;">
 						<img src="examples/assets/exp11_sentiment_chart.png"
-							style="max-height: 280px; max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+							style="max-height: 280px; max-width: 100%; border-radius: 8px;">
 					</div>
 					<div style="display: flex; gap: 10px; align-items: start;">
 						<table class="compact-table" style="font-size: 0.9em; flex: 1;">
@@ -1381,13 +1363,14 @@
 	<script src="dist/reveal.js"></script>
 	<script src="plugin/highlight/highlight.js"></script>
 	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/zoom/zoom.js"></script>
 	<script>
 		Reveal.initialize({
 			hash: true,
 			slideNumber: true,
 			width: 1200,
 			height: 700,
-			plugins: [RevealHighlight, RevealNotes]
+			plugins: [RevealHighlight, RevealNotes, RevealZoom]
 		});
 	</script>
 </body>
