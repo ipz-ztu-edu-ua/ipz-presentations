@@ -90,9 +90,22 @@ jobs:
       - name: Create index page
         run: |
           cd gh-pages-repo
+          REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
 
-          # Створюємо простий index.html зі списком всіх гілок
-          cat > branches.html << 'EOF'
+          # Збираємо всі папки-гілки (виключаємо службові)
+          BRANCH_LIST=""
+          for dir in */; do
+            dir_name="${dir%/}"
+            # Пропускаємо службові папки
+            if [[ "$dir_name" == "node_modules" || "$dir_name" == ".git" || "$dir_name" == "css" || "$dir_name" == "js" || "$dir_name" == "dist" || "$dir_name" == "plugin" || "$dir_name" == "examples" ]]; then
+              continue
+            fi
+            # Конвертуємо назву папки назад у формат гілки
+            original_name=$(echo "$dir_name" | sed 's/-/\//1')
+            BRANCH_LIST="${BRANCH_LIST}        branches.push({ name: '${dir_name}', original: '${original_name}' });\n"
+          done
+
+          cat > branches.html << EOF
           <!DOCTYPE html>
           <html>
           <head>
@@ -128,37 +141,21 @@ jobs:
                   a:hover {
                       text-decoration: underline;
                   }
-                  .date {
-                      color: #666;
-                      font-size: 0.9em;
-                      margin-left: 10px;
-                  }
               </style>
           </head>
           <body>
-              <h1>📊 Available Presentation Branches</h1>
+              <h1>Available Presentation Branches</h1>
               <ul id="branches"></ul>
               <script>
-                  // Список буде оновлюватися автоматично
                   const branches = [];
-          EOF
-
-          # Додаємо поточну гілку до списку
-          echo "        branches.push({ name: '${{ env.CLEAN_BRANCH }}', original: '${{ env.BRANCH_NAME }}', date: new Date().toISOString() });" >> branches.html
-
-          cat >> branches.html << 'EOF'
-
+          $(echo -e "$BRANCH_LIST")
                   const ul = document.getElementById('branches');
+                  branches.sort((a, b) => a.original.localeCompare(b.original));
                   branches.forEach(branch => {
                       const li = document.createElement('li');
-                      const date = new Date(branch.date).toLocaleString('uk-UA');
-                      li.innerHTML = `
-                          <a href="/${branch.name}/">🎯 ${branch.original}</a>
-                          <span class="date">Оновлено: ${date}</span>
-                      `;
+                      li.innerHTML = '<a href="/${REPO_NAME}/' + branch.name + '/">' + branch.original + '</a>';
                       ul.appendChild(li);
                   });
-
                   if (branches.length === 0) {
                       ul.innerHTML = '<li>Поки що немає доступних гілок</li>';
                   }
