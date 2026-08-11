@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>Передзахист дисертації — Савіцький Р.С.</title>
+	<title>Засідання кафедри ІПЗ — 12 серпня 2026</title>
 
 	<link rel="stylesheet" href="dist/reveal.css">
 	<link rel="stylesheet" href="dist/theme/ztu.css">
@@ -18,30 +18,13 @@
 			padding-top: 20px;
 		}
 
-		/* Hide non-relevant footer logos for dissertation defense */
+		/* Hide conference/beerjs footer logos — keep only ZTU logo */
 		.reveal .footer-conference-logo,
 		.reveal .footer-beerjs-logo {
 			display: none !important;
 		}
 
-		/* Dissertation-specific styles */
-		.title-meta {
-			font-size: 0.55em;
-			color: #555;
-			margin-top: 30px;
-			line-height: 1.6;
-		}
-
-		.title-meta span {
-			display: block;
-		}
-
-		.title-topic {
-			font-size: 0.85em;
-			line-height: 1.3;
-			margin: 20px 0;
-		}
-
+		/* ---- Reusable helpers ---- */
 		.small-text {
 			font-size: 0.65em;
 			color: #555;
@@ -49,45 +32,35 @@
 		}
 
 		.medium-text {
-			font-size: 0.75em;
+			font-size: 0.78em;
 			line-height: 1.4;
 		}
 
 		.highlight-box {
 			background: rgba(34, 74, 152, 0.08);
-			padding: 18px 24px;
+			padding: 16px 22px;
 			border-radius: 10px;
 			border-left: 4px solid var(--ztu-blue);
-			margin: 3px 0;
+			margin: 6px 0;
 			text-align: left;
 		}
 
 		.highlight-box-orange {
 			background: rgba(238, 120, 28, 0.08);
-			padding: 18px 24px;
+			padding: 16px 22px;
 			border-radius: 10px;
 			border-left: 4px solid var(--ztu-orange);
-			margin: 3px 0;
+			margin: 6px 0;
 			text-align: left;
 		}
 
 		.highlight-box-green {
 			background: rgba(76, 173, 59, 0.08);
-			padding: 18px 24px;
+			padding: 16px 22px;
 			border-radius: 10px;
 			border-left: 4px solid var(--ztu-green);
-			margin: 3px 0;
+			margin: 6px 0;
 			text-align: left;
-		}
-
-		.formula-box {
-			background: rgba(34, 74, 152, 0.05);
-			padding: 20px 30px;
-			border-radius: 10px;
-			border: 2px solid var(--ztu-blue);
-			margin: 20px auto;
-			font-size: 1.1em;
-			text-align: center;
 		}
 
 		.two-columns {
@@ -100,141 +73,109 @@
 			flex: 1;
 		}
 
-		.stat-number {
-			font-size: 1.8em;
-			font-weight: 700;
-			color: var(--ztu-blue);
+		/* ---- People cards (welcome / appointment slides) ---- */
+		.people-row {
+			display: flex;
+			gap: 30px;
+			justify-content: center;
+			align-items: stretch;
+			margin-top: 30px;
 		}
 
-		.novelty-item {
+		.person-card {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 			background: rgba(34, 74, 152, 0.05);
-			border-left: 4px solid var(--ztu-orange);
-			padding: 12px 18px;
-			margin: 5px 0;
-			border-radius: 6px;
-			text-align: justify;
-			font-size: 0.66em;
-			line-height: 1.4;
+			border-radius: 14px;
+			padding: 18px 14px 22px;
+			border-top: 4px solid var(--ztu-blue);
 		}
 
-		.novelty-item-new {
-			margin-top: 20px;
+		.person-card img {
+			width: 100%;
+			max-width: 210px;
+			aspect-ratio: 3 / 4;
+			object-fit: cover;
+			object-position: top center;
+			border-radius: 10px;
+			box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+			margin: 0;
 		}
 
-
-		.novelty-item strong {
-			font-size: 1.05em;
+		.person-card .p-name {
+			font-weight: 700;
+			font-size: 0.8em;
+			color: var(--ztu-blue);
+			margin-top: 14px;
+			line-height: 1.25;
 		}
 
-		.practical-item {
-			background: rgba(76, 173, 59, 0.05);
-			border-left: 4px solid var(--ztu-green);
-			padding: 6px 14px;
-			margin: 10px 0;
-			border-radius: 6px;
-			text-align: justify;
-			font-size: 0.63em;
+		.person-card .p-role {
+			font-size: 0.62em;
+			color: #555;
+			margin-top: 6px;
 			line-height: 1.3;
 		}
 
-		.impl-grid {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 15px;
-			margin-top: 15px;
+		/* ---- QR box (portal slide) ---- */
+		.qr-box {
+			display: flex;
+			align-items: center;
+			gap: 40px;
+			margin-top: 20px;
 		}
 
-		.impl-card {
-			background: rgba(34, 74, 152, 0.06);
-			padding: 16px;
+		.qr-box img {
+			width: 300px;
+			height: 300px;
+			border: 8px solid #fff;
+			box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
 			border-radius: 8px;
-			text-align: center;
-			font-size: 0.7em;
 		}
 
-		.impl-card .impl-number {
-			font-size: 2em;
-			font-weight: 700;
-			color: var(--ztu-blue);
+		/* ---- Duties table (slide 6) ---- */
+		.duties-table {
+			width: 100%;
+			border-collapse: collapse;
+			font-size: 0.42em;
+			line-height: 1.25;
+			border-bottom: 1px solid #e2e2e2;
 		}
 
-		.task-list {
-			text-align: left;
-			margin: 15px auto;
-			width: 90%;
-		}
-
-		.task-list li {
-			margin-bottom: 8px;
-			font-size: 0.7em;
-			line-height: 1.4;
-		}
-
-		/* Experiment chart styling */
-		.exp-chart {
-			max-height: 380px;
-			margin: 10px auto;
-			border-radius: 8px;
-			box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-		}
-
-		.exp-result {
-			font-size: 0.75em;
-			margin-top: 10px;
-			padding: 10px 20px;
-			background: rgba(76, 173, 59, 0.1);
-			border-radius: 8px;
-			display: inline-block;
-		}
-
-		/* Table styling for experiments */
-		.reveal table.compact-table {
-			font-size: 0.55em;
-		}
-
-		.reveal table.compact-table th,
-		.reveal table.compact-table td {
-			padding: 10px 8px;
-			vertical-align: middle;
-			text-align: center;
-		}
-
-		/* Conclusion items */
-		.conclusion-item {
-			background: rgba(34, 74, 152, 0.05);
-			border-left: 4px solid var(--ztu-blue);
-			padding: 10px 16px;
-			margin: 8px 0;
-			border-radius: 6px;
-			text-align: left;
-			font-size: 0.65em;
-			line-height: 1.4;
-		}
-
-		/* Architecture diagram */
-		.arch-level {
-			padding: 16px 20px;
-			border-radius: 10px;
-			margin: 8px 0;
-			text-align: left;
-			font-size: 0.8em;
-		}
-
-		.fig-caption {
-			font-size: 0.6em;
-			color: #777;
-			margin-top: 5px;
-			font-style: italic;
-		}
-
-		.reveal .slide-number {
-			right: 16px;
-			bottom: 24px;
-			font-size: 18px;
+		.duties-table th {
+			background: var(--ztu-blue);
 			color: #fff;
-			background: none;
-			font-family: inherit;
-			z-index: 100;
+			text-align: left;
+			padding: 6px 10px;
+			font-weight: 700;
+		}
+
+		.duties-table td {
+			padding: 4px 10px;
+			border-bottom: 1px solid #e2e2e2;
+			vertical-align: top;
+		}
+
+		.duties-table tr:nth-child(even) td {
+			background: rgba(34, 74, 152, 0.04);
+		}
+
+		.duties-table td.d-name {
+			white-space: nowrap;
+			font-weight: 600;
+		}
+
+		/* Numeric calc table — center numbers, keep first column left */
+		.reveal .num-table td,
+		.reveal .num-table th {
+			text-align: center !important;
+		}
+
+		.reveal .num-table td.d-name,
+		.reveal .num-table th:first-child {
+			text-align: left !important;
 		}
 	</style>
 </head>
@@ -246,1499 +187,275 @@
 		<div class="footer-beerjs-logo"></div>
 		<div class="slides">
 
-			<!-- ============================================ -->
-			<!-- КРОК 1: ВСТУПНА ЧАСТИНА (слайди 1-6)         -->
-			<!-- ============================================ -->
-
 			<!-- Слайд 1: Титулка -->
-			<section style="margin-top: -25px;">
-				<p style="font-size: 0.45em; color: #777; text-align: center; margin: 0 0 100px 0;">
+			<section>
+				<p style="font-size: 0.5em; color: #777; text-align: center; margin: 40px 0 0 0;">Державний
+					університет «Житомирська політехніка»</p>
+				<p style="font-size: 0.5em; color: #777; text-align: center; margin: 6px 0 70px 0;">Факультет
+					інформаційно-комп'ютерних технологій</p>
+				<h1 style="font-size: 1.7em; line-height: 1.25; text-align: center; margin: 0;">Засідання кафедри
+					<span class="ztu-blue">інженерії програмного забезпечення</span>
+				</h1>
+				<p style="font-size: 0.6em; color: #555; text-align: center; margin: 40px 0 0 0;">12 серпня 2026 року
 				</p>
-				<h2 style="font-size: 1.3em; line-height: 1.3; text-align: center; margin: 0 0 30px 0;">Методи і
-					алгоритми забезпечення вебдоступності тексту для людей з когнітивними та інтелектуальними
-					порушеннями</h2>
-				<div class="title-meta" style="text-align: center; margin: 0 0 70px 0; font-size: 0.7em;">
-					<span>Дисертація на здобуття наукового ступеня <strong>доктора філософії</strong></span>
-					<span>Спеціальність: <em>121 Інженерія програмного забезпечення</em></span>
-				</div>
-				<div style="text-align: right; font-size: 0.6em; margin: 0 40px 0 0;">
-					<p style="margin: 5px 0;">Виконав: <strong>Савіцький Роман Святославович</strong></p>
-					<p style="margin: 5px 0;">Науковий керівник: <strong>д.п.н., проф. Вакалюк Тетяна
-							Анатоліївна</strong></p>
-				</div>
-				<p style="font-size: 0.65em; color: #999; text-align: center; margin: 100px 0 0 0;">Житомир – 2026</p>
-				<aside class="notes">
-					Шановний голово, шановні члени спеціалізованої вченої ради, шановні колеги! Дозвольте представити
-					дисертаційне дослідження на тему «Методи і алгоритми забезпечення вебдоступності тексту для людей з
-					когнітивними та інтелектуальними порушеннями», виконане на здобуття наукового ступеня доктора
-					філософії за спеціальністю 121 — Інженерія програмного забезпечення у Державному університеті
-					«Житомирська політехніка» під керівництвом доктора педагогічних наук, професора Вакалюк Тетяни
-					Анатоліївни. Актуальність дослідження зумовлена тим, що когнітивні та інтелектуальні порушення
-					охоплюють широкий спектр станів — від синдрому дефіциту уваги та гіперактивності до розладів
-					аутистичного спектра. За даними Всесвітньої організації охорони здоров'я, понад мільярд людей у
-					світі мають ту чи іншу форму інвалідності. Для цієї категорії осіб складність текстового контенту є
-					системним бар'єром, що обмежує можливості в повноцінній участі в суспільному житті. Наявні системи
-					спрощення тексту переважно реалізують статичний підхід без урахування індивідуального когнітивного
-					стану конкретного читача в момент взаємодії. Натомість поєднання автоматизованого аналізу тексту з
-					неінвазивним моніторингом емоційного стану через вбудовану відеокамеру відкриває можливість
-					реалізувати адаптивне спрощення, що орієнтується на реальний стан конкретного користувача.
-				</aside>
+				<img src="examples/assets/kafedra_se_logo_ua.png" alt="Інженерія програмного забезпечення"
+					style="max-height: 160px; width: auto; display: block; margin: 40px auto 0;">
 			</section>
 
-
-			<!-- Слайд 2: Об'єкт, предмет, мета -->
+			<!-- Слайд 2: Новий зам. зав. каф. -->
 			<section>
-				<h2>Складові дослідження</h2>
-				<div class="highlight-box" style="font-size: 0.85em; margin-top: 25px;">
-					<strong>Об'єкт дослідження</strong> — процес забезпечення вебдоступності тексту для людей з
-					когнітивними та інтелектуальними порушеннями
+				<h2>Кадрові призначення</h2>
+				<div class="people-row" style="max-width: 340px; margin-left: auto; margin-right: auto;">
+					<div class="person-card" style="border-top-color: var(--ztu-green);">
+						<img src="examples/assets/kafedra_savitsky.png" alt="Савіцький Роман Святославович">
+						<div class="p-name">Савіцький<br>Роман Святославович</div>
+						<div class="p-role"><strong class="ztu-green">Новий заступник завідувача кафедри</strong></div>
+					</div>
 				</div>
-				<div class="highlight-box-orange" style="font-size: 0.85em;">
-					<strong>Предмет дослідження</strong> — методи і алгоритми забезпечення вебдоступності тексту для
-					людей з когнітивними та інтелектуальними порушеннями
-				</div>
-				<div class="highlight-box-green" style="font-size: 0.85em;">
-					<strong>Мета</strong> — розробка методів та алгоритмів забезпечення вебдоступності тексту для людей
-					з
-					когнітивними та інтелектуальними порушеннями
-				</div>
-				<aside class="notes">
-					Об'єктом дослідження є процес забезпечення вебдоступності тексту для людей з когнітивними та
-					інтелектуальними порушеннями. Предметом дослідження є методи і алгоритми забезпечення вебдоступності
-					тексту для людей з когнітивними та інтелектуальними порушеннями. Мета дослідження полягає у розробці
-					методів та алгоритмів забезпечення вебдоступності тексту для людей з когнітивними та
-					інтелектуальними порушеннями.
-				</aside>
 			</section>
 
-			<!-- Слайд 3: Завдання -->
+			<!-- Слайд 3: Привітання -->
 			<section>
-				<h2 style="margin-bottom: 40px;">Завдання дослідження</h2>
-				<div style="display: flex; flex-direction: column; gap: 16px; font-size: 0.72em;">
-					<div style="display: flex; align-items: center; gap: 12px;">
-						<div
-							style="width: 40px; min-width: 40px; height: 40px; font-size: 0.85em; background: var(--ztu-blue); color: white; border-radius: 50%; font-weight: bold; display: flex; align-items: center; justify-content: center;">
-							1</div>
-						<span
-							style="font-size: 1.3em; color: var(--ztu-blue); display: flex; align-items: center;">→</span>
-						<div style="text-align: justify; flex: 1; display: flex; align-items: center;">Проаналізувати
-							проблему вебдоступності для людей з когнітивними та інтелектуальними порушеннями,
-							систематизувати наявні підходи до оцінювання та адаптації текстового контенту і визначити
-							обмеження наявних рішень для україномовного середовища</div>
+				<h2>Вітаємо колег!</h2>
+				<div class="people-row">
+					<div class="person-card">
+						<img src="examples/assets/kafedra_antonyuk.png" alt="Антонюк Дмитро Сергійович">
+						<div class="p-name">Антонюк<br>Дмитро Сергійович</div>
+						<div class="p-role">доктор наук</div>
 					</div>
-					<div style="display: flex; align-items: center; gap: 12px;">
-						<div
-							style="width: 40px; min-width: 40px; height: 40px; font-size: 0.85em; background: var(--ztu-orange); color: white; border-radius: 50%; font-weight: bold; display: flex; align-items: center; justify-content: center;">
-							2</div>
-						<span
-							style="font-size: 1.3em; color: var(--ztu-orange); display: flex; align-items: center;">→</span>
-						<div style="text-align: justify; flex: 1; display: flex; align-items: center;">Розробити метод
-							визначення індексу когнітивної доступності тексту (ІКД), що враховує лексичні, синтаксичні
-							та структурні характеристики україномовних текстів</div>
+					<div class="person-card">
+						<img src="examples/assets/kafedra_savitsky.png" alt="Савіцький Роман Святославович">
+						<div class="p-name">Савіцький<br>Роман Святославович</div>
+						<div class="p-role">доктор філософії</div>
 					</div>
-					<div style="display: flex; align-items: center; gap: 12px;">
-						<div
-							style="width: 40px; min-width: 40px; height: 40px; font-size: 0.85em; background: var(--ztu-red); color: white; border-radius: 50%; font-weight: bold; display: flex; align-items: center; justify-content: center;">
-							3</div>
-						<span
-							style="font-size: 1.3em; color: var(--ztu-red); display: flex; align-items: center;">→</span>
-						<div style="text-align: justify; flex: 1; display: flex; align-items: center;">Розробити метод
-							визначення стабільної емоції розуміння тексту користувачем</div>
-					</div>
-					<div style="display: flex; align-items: center; gap: 12px;">
-						<div
-							style="width: 40px; min-width: 40px; height: 40px; font-size: 0.85em; background: var(--ztu-green); color: white; border-radius: 50%; font-weight: bold; display: flex; align-items: center; justify-content: center;">
-							4</div>
-						<span
-							style="font-size: 1.3em; color: var(--ztu-green); display: flex; align-items: center;">→</span>
-						<div style="text-align: justify; flex: 1; display: flex; align-items: center;">Розробити
-							узагальнений метод забезпечення вебдоступності тексту для людей з когнітивними та
-							інтелектуальними порушеннями</div>
-					</div>
-					<div style="display: flex; align-items: center; gap: 12px;">
-						<div
-							style="width: 40px; min-width: 40px; height: 40px; font-size: 0.85em; background: #9b59b6; color: white; border-radius: 50%; font-weight: bold; display: flex; align-items: center; justify-content: center;">
-							5</div>
-						<span style="font-size: 1.3em; color: #9b59b6; display: flex; align-items: center;">→</span>
-						<div style="text-align: justify; flex: 1; display: flex; align-items: center;">Розробити
-							алгоритм та програмну реалізацію забезпечення вебдоступності тексту для людей з когнітивними
-							та інтелектуальними порушеннями, перевірити ефективність</div>
+					<div class="person-card">
+						<img src="examples/assets/kafedra_fant.png" alt="Фант Микола Олександрович">
+						<div class="p-name">Фант<br>Микола Олександрович</div>
+						<div class="p-role">доцент</div>
 					</div>
 				</div>
-				<aside class="notes">
-					Для досягнення поставленої мети визначено наступні завдання, які представлені на слайді та в
-					авторефераті, тому дозвольте їх не зачитувати.
-				</aside>
 			</section>
 
-			<!-- Слайд 4: Наукова новизна -->
+			<!-- Слайд 4: Новий портал + QR -->
 			<section>
-				<h2>Наукова новизна</h2>
-				<div class="novelty-item novelty-item-new">
-					<strong class="ztu-orange">вперше</strong> запропоновано індекс когнітивної доступності тексту як
-					інтегральний нормований показник, що поєднує лексичний, синтаксичний і компонент читабельності в
-					єдиній шкалі, адаптованій для української мови та цільової групи користувачів, на відміну від
-					наявних метрик читабельності, які орієнтовані на англомовні тексти і не враховують специфічних
-					когнітивних бар'єрів сприйняття
-				</div>
-				<div class="novelty-item novelty-item-new">
-					розроблено метод визначення стабільної емоції на основі
-					розпізнавання виразу обличчя через відеокамеру в реальному часі, що дозволяє використовувати
-					емоційний стан як індикатор когнітивного навантаження в задачах забезпечення спрощення тексту
-				</div>
-				<div class="novelty-item novelty-item-new">
-					розроблено алгоритм та узагальнений метод забезпечення
-					вебдоступності тексту для людей з когнітивними та інтелектуальними порушеннями, що поєднує статичний
-					аналіз ІКД з динамічним управлінням на основі стабілізованої емоції та спрощенні тексту
-				</div>
-				<aside class="notes">
-					Наукова новизна дисертаційного дослідження полягає в такому. Вперше запропоновано індекс когнітивної
-					доступності тексту як інтегральний нормований показник, що поєднує лексичний, синтаксичний і
-					компонент читабельності в єдиній шкалі, адаптованій для української мови та цільової групи
-					користувачів, на відміну від наявних метрик, орієнтованих на англомовні тексти. Розроблено метод
-					визначення стабільної емоції на основі розпізнавання виразу обличчя через відеокамеру в реальному
-					часі, що дозволяє використовувати емоційний стан як індикатор когнітивного навантаження. Розроблено
-					алгоритм та узагальнений метод забезпечення вебдоступності тексту, що поєднує статичний аналіз ІКД з
-					динамічним управлінням на основі стабілізованої емоції та ітераційним спрощенням тексту. Сформовано
-					спеціалізовані словники синонімічних замін лексики окремих категорій для української мови, що
-					забезпечують лексичну оптимізацію вебконтенту в межах алгоритму спрощення.
-				</aside>
-			</section>
-
-			<!-- Слайд 5: Практичне значення -->
-			<section>
-				<h2>Практичне значення</h2>
-				<div class="practical-item">
-					<strong class="ztu-green">розроблено</strong> програмний комплекс забезпечення когнітивної
-					доступності україномовного вебтексту мовою Python із застосуванням трирівневої архітектури, що
-					реалізує повний цикл від аналізу когнітивної складності до ітераційного спрощення та може бути
-					впроваджений як інструмент підтримки читання для осіб з когнітивними та інтелектуальними порушеннями
-				</div>
-				<div class="practical-item">
-					<strong class="ztu-green">сформовано</strong> спеціалізовані словники синонімічних замін семи
-					категорій проблемної лексики з детермінованою ієрархією підстановок та морфологічним узгодженням, що
-					становлять лінгвістичний ресурс, придатний для повторного використання в інших системах обробки
-					природної мови
-				</div>
-				<div class="practical-item">
-					<strong class="ztu-green">розроблено</strong> модуль розпізнавання емоційного стану користувача з
-					двоканальною стабілізацією та програмним калібруванням параметрів на базі телеметричного корпусу, що
-					може використовуватися як самостійний компонент неінвазивного моніторингу когнітивного навантаження
-				</div>
-				<div class="practical-item">
-					<strong class="ztu-green">проведено</strong> серію з восьми обчислювальних експериментів, результати
-					яких підтвердили конвергенцію алгоритму за 1–3 ітерації, збереження семантики та масштабованість
-					методу
-				</div>
-				<aside class="notes">
-					Практичне значення отриманих результатів полягає в тому, що розроблено програмний комплекс
-					забезпечення когнітивної доступності україномовного вебтексту із застосуванням трирівневої
-					архітектури, що реалізує повний цикл від аналізу когнітивної складності до ітераційного спрощення.
-					Розроблено індекс когнітивної доступності як самостійний інструмент кількісного оцінювання
-					складності тексту, адаптований для морфологічних та синтаксичних особливостей української мови.
-					Сформовано спеціалізовані словники синонімічних замін семи категорій проблемної лексики з
-					детермінованою ієрархією підстановок та морфологічним узгодженням. Розроблено модуль розпізнавання
-					емоційного стану користувача з двоканальною стабілізацією та програмним калібруванням параметрів.
-					Проведено серію з восьми обчислювальних експериментів, результати яких підтвердили конвергенцію
-					алгоритму за одну–три ітерації, збереження семантики та масштабованість методу.
-				</aside>
-			</section>
-
-			<!-- Слайд 6: Впровадження та апробація -->
-			<section>
-				<h2>Впровадження та апробація</h2>
-				<div class="two-columns" style="font-size: 0.7em; align-items: flex-start;">
-					<div style="flex: 0.8;">
-						<h3 style="font-size: 0.9em; margin-bottom: 8px;">Впровадження</h3>
-						<div class="highlight-box" style="font-size: 0.85em; padding: 12px 16px;">
-							<p style="margin: 0 0 5px 0;"><strong>ТОВ "Тієтоеврі Кріейт Україна"</strong></p>
-							<p style="margin: 0;"><strong>BMK Груп ЮА</strong></p>
+				<h2>Новий портал університету</h2>
+				<div class="qr-box">
+					<img src="examples/assets/kafedra_newportal_qr.png" alt="QR-код на новий портал">
+					<div style="text-align: left; flex: 1;">
+						<p style="font-size: 0.9em; margin: 0 0 20px 0;">
+							<a href="https://newportal.ztu.edu.ua/" class="ztu-blue"
+								style="font-weight: 700;">newportal.ztu.edu.ua</a>
+						</p>
+						<div class="highlight-box-orange" style="font-size: 0.82em;">
+							<strong>З 1 вересня</strong> — переїзд усіх матеріалів та роботи на новий портал
 						</div>
-						<h3 style="font-size: 0.9em; margin-top: 30px; margin-bottom: 8px;">Публікації</h3>
-						<div class="impl-grid" style="grid-template-columns: 1fr 1fr; gap: 10px;">
-							<div class="impl-card" style="padding: 10px;">
-								<div class="impl-number">15</div>
-								<div>публікацій</div>
-							</div>
-							<div class="impl-card" style="padding: 10px;">
-								<div class="impl-number">4</div>
-								<div>статті</div>
-							</div>
-						</div>
-						<p style="font-size: 0.85em; margin-top: 10px;"><strong class="ztu-blue">11 конференцій</strong>
-							(2023–2025): 6 міжнар. + 5 всеукр.</p>
-					</div>
-					<div style="flex: 1.2;">
-						<h3 style="font-size: 0.9em; margin-bottom: 5px;">Географія апробації</h3>
-						<!-- Real Ukraine SVG map with city overlays -->
-						<div style="position: relative; width: 100%; aspect-ratio: 1186.6 / 797.9; max-height: 420px;">
-							<img src="examples/assets/Outline_of_Ukraine.svg"
-								style="width: 100%; height: 100%; object-fit: contain; opacity: 0.35;"
-								alt="Карта України" />
-							<!-- City markers overlay -->
-							<svg viewBox="0 0 1187 798"
-								style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-								xmlns="http://www.w3.org/2000/svg">
-								<!-- Житомир (main, larger) -->
-								<circle cx="440" cy="214" r="14" fill="#E53E23" stroke="#fff" stroke-width="2" />
-								<text x="440" y="193" text-anchor="middle" font-size="32" font-weight="700"
-									fill="#E53E23">Житомир</text>
-
-								<!-- Київ -->
-								<circle cx="561" cy="194" r="11" fill="#224A98" stroke="#fff" stroke-width="1.5" />
-								<text x="561" y="174" text-anchor="middle" font-size="30" font-weight="600"
-									fill="#224A98">Київ</text>
-
-								<!-- Львів -->
-								<circle cx="175" cy="255" r="11" fill="#224A98" stroke="#fff" stroke-width="1.5" />
-								<text x="175" y="235" text-anchor="middle" font-size="30" font-weight="600"
-									fill="#224A98">Львів</text>
-
-								<!-- Тернопіль -->
-								<circle cx="260" cy="283" r="11" fill="#224A98" stroke="#fff" stroke-width="1.5" />
-								<text x="260" y="312" text-anchor="middle" font-size="29" font-weight="600"
-									fill="#224A98">Тернопіль</text>
-
-								<!-- Хмельницький -->
-								<circle cx="365" cy="298" r="11" fill="#4CAD3B" stroke="#fff" stroke-width="1.5" />
-								<text x="395" y="280" text-anchor="middle" font-size="29" font-weight="600"
-									fill="#4CAD3B">Хмельницький</text>
-
-								<!-- Черкаси -->
-								<circle cx="663" cy="295" r="11" fill="#224A98" stroke="#fff" stroke-width="1.5" />
-								<text x="663" y="327" text-anchor="middle" font-size="30" font-weight="600"
-									fill="#224A98">Черкаси</text>
-
-								<!-- Дніпро -->
-								<circle cx="859" cy="393" r="11" fill="#224A98" stroke="#fff" stroke-width="1.5" />
-								<text x="859" y="376" text-anchor="middle" font-size="30" font-weight="600"
-									fill="#224A98">Дніпро</text>
-
-								<!-- Запоріжжя -->
-								<circle cx="867" cy="455" r="11" fill="#4CAD3B" stroke="#fff" stroke-width="1.5" />
-								<text x="885" y="448" text-anchor="start" font-size="29" font-weight="600"
-									fill="#4CAD3B">Запоріжжя</text>
-
-								<!-- Кривий Ріг -->
-								<circle cx="750" cy="448" r="11" fill="#224A98" stroke="#fff" stroke-width="1.5" />
-								<text x="722" y="482" text-anchor="middle" font-size="29" font-weight="600"
-									fill="#224A98">Кривий Ріг</text>
-
-								<!-- Херсон -->
-								<circle cx="700" cy="574" r="11" fill="#4CAD3B" stroke="#fff" stroke-width="1.5" />
-								<text x="700" y="604" text-anchor="middle" font-size="29" font-weight="600"
-									fill="#4CAD3B">Херсон</text>
-
-								<!-- Одеса -->
-								<circle cx="576" cy="590" r="11" fill="#224A98" stroke="#fff" stroke-width="1.5" />
-								<text x="546" y="620" text-anchor="middle" font-size="30" font-weight="600"
-									fill="#224A98">Одеса</text>
-
-								<!-- Переворськ (Польща) -->
-								<circle cx="18" cy="242" r="9" fill="#EE781C" stroke="#fff" stroke-width="1.5" />
-								<text x="18" y="210" text-anchor="middle" font-size="27" font-weight="600"
-									fill="#EE781C">Переворськ</text>
-								<text x="18" y="235" text-anchor="middle" font-size="16" fill="#EE781C">(Польща)</text>
-							</svg>
-							<!-- Legend below map -->
-							<div
-								style="display: flex; gap: 12px; justify-content: center; font-size: 0.7em; margin-top: 2px;">
-								<span><span
-										style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#E53E23;margin-right:3px;vertical-align:middle;"></span>Базова
-									установа</span>
-								<span><span
-										style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#224A98;margin-right:3px;vertical-align:middle;"></span>Тези
-									конф.</span>
-								<span><span
-										style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAD3B;margin-right:3px;vertical-align:middle;"></span>Фахові
-									статті</span>
-								<span><span
-										style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#EE781C;margin-right:3px;vertical-align:middle;"></span>Міжнародні</span>
-							</div>
-						</div>
+						<p class="small-text" style="margin-top: 18px;">Скануйте QR-код, щоб перейти на портал</p>
 					</div>
 				</div>
-				<aside class="notes">
-					Результати дослідження впроваджено у практичну діяльність ТОВ «Тієтоеврі Кріейт Україна» та «BMK
-					Груп ЮА». За темою дисертації опубліковано 15 наукових праць, з яких 4 статті у фахових виданнях
-					України та 11 тез доповідей. Результати апробовано на 11 наукових конференціях.
-				</aside>
 			</section>
 
-			<!-- ============================================ -->
-			<!-- КРОК 2: АНАЛІЗ ПРОБЛЕМИ (слайд 8)            -->
-			<!-- ============================================ -->
-
-			<!-- Слайд 8: Аналіз наявних підходів -->
+			<!-- Слайд: Важливі дати -->
 			<section>
-				<h2>Аналіз наявних підходів</h2>
-				<table class="compact-table"
-					style="font-size: 0.68em; margin-top: 10px; text-align: center; width: 100%;">
+				<h2 style="margin-bottom: 16px;">Важливі дати</h2>
+				<div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.72em;">
+					<div class="highlight-box" style="display: flex; gap: 14px; align-items: center; padding: 10px 18px;">
+						<strong class="ztu-blue" style="min-width: 130px;">21.08</strong>
+						<span>Фінальна подача документів на конкурс</span>
+					</div>
+					<div class="highlight-box" style="display: flex; gap: 14px; align-items: center; padding: 10px 18px;">
+						<strong class="ztu-blue" style="min-width: 130px;">25–26.08</strong>
+						<span>Засідання кафедри по факту подачі документів на конкурс</span>
+					</div>
+					<div class="highlight-box" style="display: flex; gap: 14px; align-items: center; padding: 10px 18px;">
+						<strong class="ztu-blue" style="min-width: 130px;">28.08 · 10:00</strong>
+						<span>Збори трудового колективу університету</span>
+					</div>
+					<div class="highlight-box" style="display: flex; gap: 14px; align-items: center; padding: 10px 18px;">
+						<strong class="ztu-blue" style="min-width: 130px;">28.08 · 11:00</strong>
+						<span>Вчена рада університету</span>
+					</div>
+					<div class="highlight-box" style="display: flex; gap: 14px; align-items: center; padding: 10px 18px;">
+						<strong class="ztu-blue" style="min-width: 130px;">31.08</strong>
+						<span>Свято першокурсника</span>
+					</div>
+					<div class="highlight-box-green" style="display: flex; gap: 14px; align-items: center; padding: 10px 18px;">
+						<strong class="ztu-green" style="min-width: 130px;">З 01.09</strong>
+						<span><strong>Нульовий тиждень</strong></span>
+					</div>
+				</div>
+			</section>
+
+			<!-- Слайд: Реклама спеціальності -->
+			<section>
+				<h2>Реклама спеціальності</h2>
+				<div style="display: flex; align-items: center; justify-content: center; gap: 50px; margin-top: 20px;">
+					<img src="examples/assets/kafedra_se_logo_ua.png" alt="Інженерія програмного забезпечення"
+						style="max-height: 150px; width: auto;">
+					<img src="examples/assets/kafedra_se_logo_en.png" alt="Software engineering"
+						style="max-height: 130px; width: auto;">
+				</div>
+				<div class="two-columns" style="font-size: 0.78em; margin-top: 24px;">
+					<div class="highlight-box">
+						<strong class="ztu-blue">Реклама та сторінки в соц. мережах</strong><br>Дунєв Сергій
+					</div>
+					<div class="highlight-box-orange">
+						<strong class="ztu-orange">Новини та ведення обліку новин</strong><br>Талавер Олег
+					</div>
+				</div>
+				<div class="highlight-box-green"
+					style="font-size: 0.9em; text-align: center; margin-top: 20px; padding: 18px;">
+					⚠️ <strong>Важливо створювати і поширювати новини</strong>
+				</div>
+			</section>
+
+			<!-- Слайд: Нова освітня програма -->
+			<section>
+				<h2>Нова освітня програма</h2>
+				<div style="text-align: center; margin-top: 40px;">
+					<span
+						style="display: inline-block; font-size: 1.5em; font-weight: 800; color: #fff; background: linear-gradient(135deg, var(--ztu-green) 0%, #3a8f2e 100%); padding: 22px 40px; border-radius: 14px; box-shadow: 0 6px 20px rgba(76, 173, 59, 0.35); line-height: 1.2;">
+						Інженерія сучасних<br>інтелектуальних систем
+					</span>
+				</div>
+				<div style="display: flex; align-items: center; justify-content: center; width: 220px; height: 120px; margin: 30px auto 0; border: 3px dashed #bbb; border-radius: 12px; color: #999; font-size: 0.7em;">
+					Тут буде логотип
+				</div>
+				<div class="highlight-box-orange"
+					style="font-size: 0.9em; text-align: center; margin-top: 30px; padding: 18px;">
+					⚠️ <strong>Пропонуйте предмети та наповнення програми</strong> (вересень 2026)
+				</div>
+			</section>
+
+			<!-- Слайд: Оновлення робочих програм -->
+			<section>
+				<h2>Оновлення робочих програм</h2>
+				<div class="highlight-box-green"
+					style="font-size: 0.9em; text-align: center; margin: 14px 0 18px; padding: 14px;">
+					<strong>З 1 вересня оновлюємо всі робочі програми</strong>
+				</div>
+				<ul style="text-align: left; font-size: 0.72em; line-height: 1.7;">
+					<li>РП будуть створюватись через <span
+							style="display: inline-block; background: var(--ztu-blue); color: #fff; font-weight: 800; padding: 2px 12px; border-radius: 6px; letter-spacing: 0.5px;">КОНСТРУКТОР
+							РП</span></li>
+					<li>Перевірити на відсутність <strong>російських джерел</strong></li>
+					<li>Відбуватиметься перевірка на <strong>генерацію ШІ</strong> та відповідність дисципліні</li>
+					<li>Уніфікація назв <strong>програмних результатів навчання</strong> та компетентностей</li>
+					<li>За можливості додаємо <strong class="ztu-green">АІ (ШІ)</strong> в кожен курс — 1–2 теми</li>
+				</ul>
+				<div class="highlight-box-orange"
+					style="font-size: 0.85em; text-align: center; margin-top: 16px; padding: 16px;">
+					⚠️ Кожен <strong>ст. викладач і вище</strong> має читати хоча б <strong
+						class="ztu-orange">ОДИН лекційний курс</strong>
+				</div>
+			</section>
+
+			<!-- Слайд 5: Розподіл обов'язків -->
+			<section>
+				<h2 style="margin-bottom: 12px; font-size: 1.1em;">Розподіл обов'язків</h2>
+				<div style="display: flex; gap: 20px; align-items: flex-start;">
+					<table class="duties-table" style="flex: 1;">
+						<thead>
+							<tr>
+								<th style="width: 38%;">ПІБ</th>
+								<th>Постійні обов'язки</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr><td class="d-name">Вакалюк Тетяна Анатоліївна</td><td>КПІ виконання контрактів, навантаження, перевірка п.38, навчальні плани, ризики, журнал, семінар Scopus</td></tr>
+							<tr><td class="d-name">Єфремов Юрій Миколайович</td><td>Дипломні роботи</td></tr>
+							<tr><td class="d-name">Фант Микола Олександрович</td><td></td></tr>
+							<tr><td class="d-name">Антонюк Дмитро Сергійович</td><td>Спонсорування та проведення відкритих лекцій</td></tr>
+							<tr><td class="d-name">Чижмотря Олексій Володимирович</td><td>План та звіт роботи кафедри, опитування/анкетування, опрацювання результатів</td></tr>
+							<tr><td class="d-name">Чижмотря Олена Геннадіївна</td><td>Створення сторінок на Learn, секретар конференції</td></tr>
+							<tr><td class="d-name">Толстой Ігор Анатолійович</td><td>SEO сайту університету</td></tr>
+							<tr><td class="d-name">Локтікова Тамара Миколаївна</td><td>Документи кафедри</td></tr>
+							<tr><td class="d-name">Власенко Олег Васильович</td><td>Комунікація зі студентами, олімпіадний рух</td></tr>
+							<tr><td class="d-name">Варганова Діна Олександрівна</td><td>Звіт з науки</td></tr>
+							<tr><td class="d-name">Кушнір Надія Олександрівна</td><td>Протоколи засідань кафедри (з 1 вересня)</td></tr>
+						</tbody>
+					</table>
+					<table class="duties-table" style="flex: 1;">
+						<thead>
+							<tr>
+								<th style="width: 38%;">ПІБ</th>
+								<th>Постійні обов'язки</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr><td class="d-name">Дмитренко Ірина Анатоліївна</td><td>Доробити протоколи і передати Кушнір Н.О. до 30 серпня</td></tr>
+							<tr><td class="d-name">Лисогор Юрій Іванович</td><td>Взаємовідвідування</td></tr>
+							<tr><td class="d-name">Савіцький Роман Святославович</td><td>Робота по боргам, перевірка робочих програм, навчальні плани, ризики</td></tr>
+							<tr><td class="d-name">Концидайло Андрій Михайлович</td><td>Секретар конференції</td></tr>
+							<tr><td class="d-name">Ковтун Валентин Віталійович</td><td></td></tr>
+							<tr><td class="d-name">Талавер Олег Володимирович</td><td>Оновлення новин для акредитації (заходи), введення новин</td></tr>
+							<tr><td class="d-name">Годлевський Юрій Олександрович</td><td>Проєктна діяльність</td></tr>
+							<tr><td class="d-name">Дунєв Сергій Сергійович</td><td>Реклама</td></tr>
+							<tr><td class="d-name">Піонтківський Владислав Ігорович</td><td>Секретар конференції</td></tr>
+							<tr><td class="d-name">Нерода Сергій Іванович</td><td>Профорієнтація</td></tr>
+							<tr><td class="d-name">Лімінович Іван Дмитрович</td><td>Профорієнтація</td></tr>
+							<tr><td class="d-name">Громський Олександр Олександрович</td><td>Профорієнтація</td></tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="highlight-box" style="font-size: 0.62em; margin-top: 14px; padding: 12px 18px;">
+					<strong class="ztu-blue">Гаранти</strong> відповідають за освітні програми, навчальні плани і
+					зворотній зв'язок щодо обговорення змісту програм, а також за весь акредитаційний процес
+				</div>
+			</section>
+
+			<!-- Слайд: Вбудована Google-презентація -->
+			<section data-background-iframe="https://docs.google.com/presentation/d/1jBhWAoN2i6zaTp86JRKONMhyGG2pNJKy/embed?start=false&loop=false&delayms=60000"
+				data-background-interactive>
+			</section>
+
+			<!-- Слайд: Приклад розрахунку годин -->
+			<section>
+				<h2 style="font-size: 1.1em; margin-bottom: 16px;">Приклад розрахунку годин (наукова діяльність)</h2>
+				<table class="duties-table num-table" style="font-size: 0.5em; max-width: 820px; margin: 0 auto;">
 					<thead>
-						<tr style="background: rgba(34,74,152,0.1);">
-							<th style="text-align: left;">Підхід</th>
-							<th>Пояснюване<br>оцінювання</th>
-							<th>Локалізація<br>бар'єрів</th>
-							<th>Контрольоване<br>спрощення</th>
-							<th>Українська<br>мова</th>
-							<th>Емоційний<br>зв'язок</th>
+						<tr>
+							<th style="width: 34%; text-align: left;">Вид діяльності</th>
+							<th style="text-align: center;">Кількість<br>авторів</th>
+							<th style="text-align: center;">Кількість<br>публ.</th>
+							<th style="text-align: center;">Годин<br>за 1 од.</th>
+							<th style="text-align: center;">Всього</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td style="text-align: left;"><strong>Формули читабельності</strong> (FK, SMOG)</td>
-							<td style="color: var(--ztu-green);">✓</td>
-							<td style="color: var(--ztu-red);">✗</td>
-							<td style="color: var(--ztu-red);">✗</td>
-							<td style="color: var(--ztu-red);">✗</td>
-							<td style="color: var(--ztu-red);">✗</td>
+						<tr><td class="d-name">Захист докторської</td><td></td><td>1</td><td>250</td><td>250</td></tr>
+						<tr><td class="d-name">Скопус (конференційний)</td><td>5</td><td>2</td><td>350</td><td>140</td></tr>
+						<tr><td class="d-name">Керування аспірантами</td><td></td><td>2</td><td>50</td><td>100</td></tr>
+						<tr><td class="d-name">Фахова</td><td>2</td><td>1</td><td>100</td><td>50</td></tr>
+						<tr><td class="d-name">Фахова</td><td>5</td><td>2</td><td>100</td><td>40</td></tr>
+						<tr><td class="d-name">Розділ закорд. монографії</td><td>8</td><td>1</td><td>30</td><td>3,75</td></tr>
+						<tr><td class="d-name">Член редколегії</td><td></td><td></td><td>10</td><td>10</td></tr>
+						<tr><td class="d-name">Тези</td><td>5</td><td>1</td><td>5</td><td>1</td></tr>
+						<tr><td class="d-name">Феїр-дані</td><td>2</td><td>1</td><td>50</td><td>25</td></tr>
+						<tr style="font-weight: 700;">
+							<td class="d-name" colspan="4" style="text-align: right;">Всього</td>
+							<td style="background: var(--ztu-green); color: #fff;">619,75</td>
 						</tr>
-						<tr>
-							<td style="text-align: left;"><strong>Лексико-статистичні</strong></td>
-							<td style="color: var(--ztu-orange);">◐</td>
-							<td style="color: var(--ztu-green);">✓</td>
-							<td style="color: var(--ztu-red);">✗</td>
-							<td style="color: var(--ztu-orange);">◐</td>
-							<td style="color: var(--ztu-red);">✗</td>
-						</tr>
-						<tr>
-							<td style="text-align: left;"><strong>Синтаксичні / правилові</strong></td>
-							<td style="color: var(--ztu-green);">✓</td>
-							<td style="color: var(--ztu-orange);">◐</td>
-							<td style="color: var(--ztu-orange);">◐</td>
-							<td style="color: var(--ztu-red);">✗</td>
-							<td style="color: var(--ztu-red);">✗</td>
-						</tr>
-						<tr>
-							<td style="text-align: left;"><strong>Трансформерні моделі</strong></td>
-							<td style="color: var(--ztu-red);">✗</td>
-							<td style="color: var(--ztu-green);">✓</td>
-							<td style="color: var(--ztu-orange);">◐</td>
-							<td style="color: var(--ztu-orange);">◐</td>
-							<td style="color: var(--ztu-red);">✗</td>
-						</tr>
-						<tr>
-							<td style="text-align: left;"><strong>LLM-спрощення</strong></td>
-							<td style="color: var(--ztu-red);">✗</td>
-							<td style="color: var(--ztu-orange);">◐</td>
-							<td style="color: var(--ztu-red);">✗</td>
-							<td style="color: var(--ztu-orange);">◐</td>
-							<td style="color: var(--ztu-red);">✗</td>
-						</tr>
-						<tr>
-							<td style="text-align: left;"><strong>FER (емоції)</strong></td>
-							<td style="color: var(--ztu-red);">✗</td>
-							<td style="color: var(--ztu-red);">✗</td>
-							<td style="color: var(--ztu-red);">✗</td>
-							<td style="color: var(--ztu-green);">✓</td>
-							<td style="color: var(--ztu-green);">✓</td>
+						<tr style="font-weight: 700;">
+							<td class="d-name" colspan="4" style="text-align: right;">Норма</td>
+							<td>600</td>
 						</tr>
 					</tbody>
 				</table>
-				<div style="display: flex; gap: 20px; justify-content: center; font-size: 0.6em; margin-top: 12px;">
-					<span><span style="color: var(--ztu-green); font-weight: bold;">✓</span> — повна підтримка</span>
-					<span><span style="color: var(--ztu-orange); font-weight: bold;">◐</span> — часткова</span>
-					<span><span style="color: var(--ztu-red); font-weight: bold;">✗</span> — відсутня</span>
-				</div>
-				<aside class="notes">
-					Аналіз наявних підходів дозволив встановити, що формули читабельності забезпечують пояснюване
-					оцінювання, проте не здатні локалізувати конкретні бар'єри та не адаптовані для української мови.
-					Лексико-статистичні методи забезпечують локалізацію, але лише частково підтримують українську мову.
-					Трансформерні моделі та LLM-підходи мають високу аналітичну здатність, але не забезпечують
-					контрольованості та відтворюваності результату. Системи розпізнавання емоцій надають зворотний
-					зв'язок, але не виконують аналіз тексту.
-				</aside>
 			</section>
 
-			<!-- ============================================ -->
-			<!-- КРОК 3: МЕТОДИ (слайди 9–14)                 -->
-			<!-- ============================================ -->
-
-			<!-- Слайд 9: ІКД -->
+			<!-- Слайд: Дубль титульного -->
 			<section>
-				<h2>Індекс когнітивної доступності (ІКД)</h2>
-				<div class="formula-box">
-					<strong>ІКД = w₁·Lex + w₂·Syn + w₃·Read</strong>
-					<p style="font-size: 0.7em; margin: 8px 0 0 0; color: #555;">де Lex, Syn, Read ∈ [0; 1],&nbsp; w₁ +
-						w₂ + w₃ = 1</p>
-				</div>
-				<div class="two-columns" style="margin-top: 15px;">
-					<div style="font-size: 0.95em;">
-						<div class="novelty-item" style="border-left-color: var(--ztu-blue);">
-							<strong>Lex (w₁ = 0,40)</strong> — лексичний компонент: рідковживані слова, терміни,
-							абревіатури, сленг, архаїзми, ненормативна лексика
-						</div>
-						<div class="novelty-item" style="border-left-color: var(--ztu-orange);">
-							<strong>Syn (w₂ = 0,35)</strong> — синтаксичний: глибина вкладеності, підрядні конструкції,
-							довжина ланцюжків залежностей
-						</div>
-						<div class="novelty-item" style="border-left-color: var(--ztu-green);">
-							<strong>Read (w₃ = 0,25)</strong> — читабельність: FK<sub>ukr</sub>, SMOG<sub>ukr</sub>,
-							<span style="white-space: nowrap;">D-Level<sub>ukr</sub></span> (калібровані для української
-							мови)
-						</div>
-					</div>
-					<div style="font-size: 0.7em;">
-						<p style="margin: 0 0 8px 0; font-weight: 600;">Шкала інтерпретації</p>
-						<table class="compact-table" style="font-size: 0.85em;">
-							<tr style="background: rgba(76,173,59,0.2);">
-								<td>0.80–1.00</td>
-								<td>Відмінна доступність</td>
-							</tr>
-							<tr style="background: rgba(76,173,59,0.1);">
-								<td>0.60–0.80</td>
-								<td>Хороша</td>
-							</tr>
-							<tr style="background: rgba(238,120,28,0.1);">
-								<td>0.40–0.60</td>
-								<td>Помірна</td>
-							</tr>
-							<tr style="background: rgba(229,62,35,0.1);">
-								<td>0.20–0.40</td>
-								<td>Низька</td>
-							</tr>
-							<tr style="background: rgba(229,62,35,0.2);">
-								<td>0.00–0.20</td>
-								<td>Відсутня</td>
-							</tr>
-						</table>
-						<p style="font-size: 0.85em; margin-top: 10px;">Ваги визначено <strong>методом безпосереднього
-								оцінювання</strong> (10 фахівців, конкордація Кендалла)</p>
-					</div>
-				</div>
-				<aside class="notes">
-					В результаті запропоновано індекс когнітивної доступності тексту як інтегральний нормований показник
-					у діапазоні від нуля до одиниці. ІКД обчислюється як зважена сума трьох компонентів. Лексичний
-					компонент із вагою 0,40 відображає домінуючу роль незрозумілої лексики як першого бар'єру для
-					цільової аудиторії. Він оцінює частку проблемних лексем семи категорій відносно загального обсягу
-					тексту. Синтаксичний компонент із вагою 0,35 оцінює навантаження на робочу пам'ять через глибину
-					вкладеності дерева залежностей, кількість підрядних конструкцій та довжину ланцюжків залежностей.
-					Компонент читабельності з вагою 0,25 виконує узагальнювальну функцію оцінки загальної щільності
-					тексту на основі трьох формул читабельності, перекаліброваних для української мови. Вагові
-					коефіцієнти визначено методом безпосереднього оцінювання. Групі з десяти фахівців було запропоновано
-					ранжувати внесок кожного компонента у загальну когнітивну складність тексту. Узгодженість оцінок
-					перевірено за коефіцієнтом конкордації Кендалла, що підтвердив статистичну значущість отриманого
-					розподілу ваг. На основі отриманого індексу побудовано п'ятирівневу шкалу інтерпретації значень ІКД
-					для підтримки прийняття рішень щодо необхідності трансформацій тексту.
-				</aside>
-			</section>
-
-			<!-- Слайд 10: Калібровані формули читабельності -->
-			<section>
-				<h2>Калібровані формули читабельності</h2>
-				<p class="small-text" style="margin-bottom: 10px;">Калібрування на корпусі <strong>Brown-UK</strong> (88
-					фрагментів, 11 рівнів складності) методом найменших квадратів (OLS)</p>
-				<div class="formula-box" style="font-size: 0.85em; padding: 14px 24px; text-align: left;">
-					<p style="margin: 6px 0;"><strong>FK<sub>ukr</sub></strong> = 0,065 · ASL + 0,853 · ASW − 1,197
-						&nbsp;&nbsp; <span class="ztu-green" style="font-size:0.9em;">(R² = 0,995)</span></p>
-					<p style="margin: 6px 0;"><strong>SMOG<sub>ukr</sub></strong> = 0,153 · √(P · 30 / S) − 0,214
-						&nbsp;&nbsp; <span class="ztu-green" style="font-size:0.9em;">(R² = 0,998)</span></p>
-					<p style="margin: 6px 0;"><strong>DL<sub>ukr</sub></strong> = 0,067 · ASL + 0,023 · PDW + 0,174
-						&nbsp;&nbsp; <span class="ztu-green" style="font-size:0.9em;">(R² = 0,997)</span></p>
-				</div>
-				<div class="two-columns" style="font-size: 0.65em; margin-top: 15px;">
-					<div>
-						<div class="highlight-box" style="padding: 10px 14px;">
-							<p style="margin: 0;"><strong>Калібрування для української мови:</strong></p>
-							<ul style="margin: 5px 0 0 15px;">
-								<li>Підрахунок складів за українськими голосними</li>
-								<li>Токенізація: апострофи, дефіси, абревіатури</li>
-								<li>Словник простої лексики для D-Level</li>
-							</ul>
-						</div>
-					</div>
-					<div>
-						<div class="highlight-box-green" style="padding: 10px 14px;">
-							<p style="margin: 0;"><strong>Валідація</strong> (30 фрагментів, 6 жанрів):</p>
-							<p style="margin: 5px 0 0 0; font-size: 1.1em;">Ранговий коефіцієнт Спірмена <strong
-									class="ztu-green">ρ = 1,0</strong> для всіх трьох формул</p>
-						</div>
-					</div>
-				</div>
-				<aside class="notes">
-					Для обчислення компонента читабельності ІКД було виконано калібрацію коефіцієнтів методом найменших
-					квадратів. Для кожної формули побудовано регресійну модель, де залежною змінною є рівень складності
-					фрагмента, а незалежними — відповідні текстові ознаки. Усі коефіцієнти значущі на рівні p менше
-					0,001. Отримані моделі демонструють високу точність апроксимації: FK для української мови з
-					коефіцієнтом детермінації R-квадрат 0,995 та середньоквадратичною похибкою 0,043; SMOG для
-					української мови з R-квадрат 0,998 та похибкою 0,028; D-Level для української мови з R-квадрат 0,997
-					та похибкою 0,032. Незалежну валідацію проведено на окремій підвибірці Brown-UK з 30 фрагментів.
-					Калібраційний корпус сформовано як стратифіковану підвибірку з корпусу Brown-UK. Він охоплює 88
-					текстових фрагментів обсягом 200–400 слів, розподілених за одинадцятьма рівнями. Адаптація для
-					української мови включала підрахунок складів за українськими голосними з евристикою групування
-					послідовних голосних, коректну токенізацію з урахуванням апострофів, дефісів та абревіатур, а також
-					побудову словника простої лексики для формули D-Level.
-				</aside>
-			</section>
-
-			<!-- Слайд 11: Метод стабільної емоції -->
-			<section>
-				<h2>Метод визначення стабільної емоції</h2>
-				<div style="display: flex; gap: 24px; font-size: 0.65em; padding: 0 30px;">
-					<div style="flex: 3; display: flex; align-items: center; justify-content: center;">
-						<img src="examples/assets/2_3_stable.png"
-							style="max-height: 520px; max-width: 95%; border-radius: 8px; margin-top: -10px;">
-					</div>
-					<div style="flex: 2; display: flex; flex-direction: column; justify-content: center;">
-						<div class="formula-box" style="font-size: 0.95em; padding: 10px 14px;">
-							<p style="margin: 0;">S<sub>l</sub>(t) = d · S<sub>l</sub>(t−1) + (1−d) · v<sub>l</sub>(t)
-							</p>
-							<p style="font-size: 0.8em; margin: 4px 0 0 0; color: #555;">d — коефіцієнт затухання, v —
-								впевненість моделі</p>
-						</div>
-						<div class="highlight-box" style="padding: 8px 12px; margin-top: 8px;">
-							<strong>Двоканальна стабілізація:</strong>
-							<ul style="margin: 5px 0 0 15px;">
-								<li><strong>Короткостроковий</strong> — швидка реакція</li>
-								<li><strong>Довгостроковий</strong> — підтвердження тенденції</li>
-							</ul>
-						</div>
-						<div class="highlight-box-orange" style="padding: 8px 12px; margin-top: 8px;">
-							<strong>Негативний консенсус:</strong> обидва канали фіксують негативний стан → активація
-							допомоги
-						</div>
-					</div>
-				</div>
-				<aside class="notes">
-					ІКД оцінює складність самого тексту, проте для адаптивного спрощення необхідний також зворотний
-					зв'язок від користувача. Для цього розроблено метод визначення стабільної емоції, який аналізує
-					вираз обличчя користувача через вбудовану відеокамеру в реальному часі. Введено поняття стійкої
-					емоції як стабілізованого у часі класифікаційного рішення на основі формули експоненційного
-					затухання. Метод використовує двоканальну архітектуру стабілізації. Короткостроковий канал
-					забезпечує швидку реакцію на зміну емоційного стану. Довгостроковий канал підтверджує тенденцію та
-					запобігає хибним спрацюванням. Запроваджено правило негативного консенсусу: коли обидва канали
-					одночасно фіксують негативний емоційний стан, система переходить до допоміжного режиму спрощення.
-					Значення параметрів кожного каналу — коефіцієнт затухання, поріг активації та мінімальна кількість
-					спостережень — отримано за протоколом програмної калібрації на базі телеметричного корпусу з трьох
-					серій з аналітичним виведенням коефіцієнтів під обмеження часу реакції та ефективної пам'яті
-					фільтра.
-				</aside>
-			</section>
-
-			<!-- Слайд 12: Словники синонімічних замін -->
-			<section>
-				<h2>Лексичні ресурси і потік замін</h2>
-				<div style="display: flex; gap: 24px; align-items: center; padding: 0 20px;">
-					<div style="flex: 3; display: flex; align-items: center; justify-content: center;">
-						<img src="examples/assets/2_5_synon.png"
-							style="max-height: 440px; max-width: 100%; border-radius: 8px;">
-					</div>
-					<div style="flex: 2; display: flex; flex-direction: column; gap: 10px; font-size: 0.63em;">
-						<div class="highlight-box" style="padding: 8px 12px; margin: 0;">
-							<strong>7 категорій:</strong> абревіатури, сленг, терміни, ненормативна, застаріла, складна
-							та
-							рідковживана лексика
-						</div>
-						<div class="highlight-box" style="padding: 8px 12px; margin: 0;">
-							<strong>Морфологічне узгодження:</strong> пошук за лемою, автоматичне узгодження відмінка,
-							числа, роду
-						</div>
-						<div class="highlight-box-green" style="padding: 8px 12px; margin: 0;">
-							<strong>Детермінованість</strong> результату, незалежність від зовнішніх сервісів, прозорий
-							аудит
-						</div>
-					</div>
-				</div>
-				<aside class="notes">
-					Ключовим рішенням є використання словникового підходу як базового механізму замін. На відміну від
-					генеративних підходів, словниковий рівень спирається на наперед підготовлені та перевірені варіанти
-					замін, що забезпечує детермінованість результату, незалежність від зовнішніх сервісів та можливість
-					прозорого аудиту кожної заміни. Словникова система охоплює сім категорій проблемної лексики, кожна з
-					яких відповідає окремому типу когнітивного бар'єру. Структура реалізована у двох рівнях. Рівень
-					першоджерел містить 467 тисяч словоформ і призначений для детекції бар'єрів у тексті. Рівень замін
-					містить 54 тисячі лем із пріоритизованими варіантами спрощення. Пошук заміни виконується за
-					ієрархією — від точного збігу словоформи через лематизований пошук до індексного — з автоматичним
-					морфологічним узгодженням відмінка, числа та роду.
-				</aside>
-			</section>
-
-			<!-- Слайд 12б: Архітектура конвеєра лексичних замін -->
-			<section>
-				<h2>Архітектура конвеєра лексичних замін</h2>
-				<!-- Горизонтальний потік -->
-				<div style="display: flex; align-items: stretch; gap: 0; font-size: 0.54em; margin-bottom: 10px;">
-					<div
-						style="flex: 1; background: rgba(34,74,152,0.12); border: 2px solid var(--ztu-blue); padding: 10px 12px; border-radius: 8px 0 0 8px; display: flex; flex-direction: column; justify-content: flex-start; text-align: center;">
-						<strong style="font-size: 1.15em; color: var(--ztu-blue);">Детекція</strong>
-						<p style="margin: 6px 0 0 0;">7 словникових детекторів<br>+ NER RoBERTa (терміни)<br>+ нечіткий
-							пошук (profanity)</p>
-					</div>
-					<div
-						style="display: flex; align-items: center; font-size: 1.8em; color: var(--ztu-blue); padding: 0 2px;">
-						→</div>
-					<div
-						style="flex: 1; background: rgba(238,120,28,0.12); border: 2px solid var(--ztu-orange); padding: 10px 12px; display: flex; flex-direction: column; justify-content: flex-start; text-align: center;">
-						<strong style="font-size: 1.15em; color: var(--ztu-orange);">Пошук заміни</strong>
-						<p style="margin: 6px 0 0 0;">4-рівнева ієрархія словників<br>(467K форм · 54K лем)<br>+ кеш
-							результатів</p>
-					</div>
-					<div
-						style="display: flex; align-items: center; font-size: 1.8em; color: var(--ztu-orange); padding: 0 2px;">
-						→</div>
-					<div
-						style="flex: 1; background: rgba(229,62,35,0.12); border: 2px solid var(--ztu-red); padding: 10px 12px; display: flex; flex-direction: column; justify-content: flex-start; text-align: center;">
-						<strong style="font-size: 1.15em; color: var(--ztu-red);">LLM-резерв</strong>
-						<p style="margin: 6px 0 0 0;">Лише якщо словник ∅<br>MamayLLM / LapaLLM<br>fallback: Gemma ·
-							Gemini</p>
-					</div>
-					<div
-						style="display: flex; align-items: center; font-size: 1.8em; color: var(--ztu-red); padding: 0 2px;">
-						→</div>
-					<div
-						style="flex: 1; background: rgba(76,173,59,0.12); border: 2px solid var(--ztu-green); padding: 10px 12px; border-radius: 0 8px 8px 0; display: flex; flex-direction: column; justify-content: flex-start; text-align: center;">
-						<strong style="font-size: 1.15em; color: var(--ztu-green);">Валідація</strong>
-						<p style="margin: 6px 0 0 0;">Морфоузгодження (pymorphy2)<br>POS-фільтр · довжина<br>→
-							застосування справа-наліво</p>
-					</div>
-				</div>
-				<!-- Деталізація нижче -->
-				<div style="display: flex; gap: 8px; font-size: 0.54em;">
-					<!-- NER блок -->
-					<div class="highlight-box-orange"
-						style="flex: 1; padding: 8px 10px; display: flex; flex-direction: column; justify-content: space-between; gap: 6px; font-size: 1.08em;">
-						<strong>NER-модель (терміни)</strong>
-						<div><code style="font-size: 0.9em;">ukr-term-detection</code> (RoBERTa)</div>
-						<div>Навчена на українських фахових текстах · BIO-анотація</div>
-						<div>Поріг: 0.55 / 0.85<br>fallback: <code style="font-size: 0.9em;">ukr-roberta-base</code>
-						</div>
-					</div>
-					<!-- LLM конфігурації -->
-					<div class="highlight-box" style="flex: 1.3; padding: 8px 10px;">
-						<strong>Ієрархія LLM-моделей</strong>
-						<table class="compact-table" style="font-size: 0.92em; margin-top: 4px;">
-							<tr style="background: rgba(34,74,152,0.08);">
-								<td></td>
-								<td><strong>Прості категорії</strong></td>
-								<td><strong>Складні категорії</strong></td>
-							</tr>
-							<tr>
-								<td style="font-weight: 600;">Цільова</td>
-								<td>MamayLLM (Gemma 2, 9B)</td>
-								<td>LapaLLM (Gemma 3, 12B)</td>
-							</tr>
-							<tr>
-								<td style="font-weight: 600;">Альтерн.</td>
-								<td>Gemma 3 12B · 30с</td>
-								<td>Gemini 1.5 Flash · 45с</td>
-							</tr>
-						</table>
-					</div>
-					<!-- Валідація -->
-					<div class="highlight-box-green"
-						style="flex: 1.1; padding: 8px 10px; display: flex; flex-direction: column;">
-						<strong>8 критеріїв валідації LLM</strong>
-						<div
-							style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4, 1fr); gap: 5px; margin-top: 6px;">
-							<div
-								style="display: flex; align-items: center; justify-content: center; text-align: center; background: rgba(76,173,59,0.12); border-radius: 4px; padding: 5px 6px;">
-								дублювання</div>
-							<div
-								style="display: flex; align-items: center; justify-content: center; text-align: center; background: rgba(76,173,59,0.12); border-radius: 4px; padding: 5px 6px;">
-								довжина</div>
-							<div
-								style="display: flex; align-items: center; justify-content: center; text-align: center; background: rgba(76,173,59,0.12); border-radius: 4px; padding: 5px 6px;">
-								морфологія</div>
-							<div
-								style="display: flex; align-items: center; justify-content: center; text-align: center; background: rgba(76,173,59,0.12); border-radius: 4px; padding: 5px 6px;">
-								POS-сумісність</div>
-							<div
-								style="display: flex; align-items: center; justify-content: center; text-align: center; background: rgba(76,173,59,0.12); border-radius: 4px; padding: 5px 6px;">
-								min 2 варіанти</div>
-							<div
-								style="display: flex; align-items: center; justify-content: center; text-align: center; background: rgba(76,173,59,0.12); border-radius: 4px; padding: 5px 6px;">
-								нормалізація</div>
-							<div
-								style="display: flex; align-items: center; justify-content: center; text-align: center; background: rgba(76,173,59,0.12); border-radius: 4px; padding: 5px 6px;">
-								фільтр підрядків</div>
-							<div
-								style="display: flex; align-items: center; justify-content: center; text-align: center; background: rgba(76,173,59,0.12); border-radius: 4px; padding: 5px 6px;">
-								temperature/top_p</div>
-						</div>
-					</div>
-				</div>
-				<!-- Кешування -->
-				<div style="font-size: 0.54em; margin-top: 8px;">
-					<div class="highlight-box" style="padding: 6px 12px; text-align: center;">
-						<strong>Зворотний зв'язок:</strong> успішний LLM-результат → переноситься у словниковий кеш →
-						повторне використання без виклику моделі
-					</div>
-				</div>
-				<aside class="notes">
-					Словникові ресурси працюють у складі конвеєра лексичних замін. Обробка кожного тексту проходить
-					чотири послідовні етапи, і порядок цих етапів принциповий — кожний наступний спирається на результат
-					попереднього. Перший етап — детекція. Сім словникових детекторів паралельно сканують текст за
-					відповідними категоріями. Другий етап — пошук заміни у словниках з кешуванням результатів. Третій
-					етап — LLM-резерв, який активується лише за відсутності словникового кандидата. Четвертий етап —
-					валідація. Кожний LLM-результат проходить перевірку за вісьмома критеріями, серед яких — контроль
-					дублювання, довжини, морфології, POS-сумісності, наявності мінімум двох варіантів та фіксація
-					параметрів генерації. Успішний результат переноситься у словниковий кеш, тож при повторному
-					зверненні до тієї ж лексеми модель вже не викликається.
-				</aside>
-			</section>
-
-			<!-- Слайд 13: Узагальнений метод -->
-			<section>
-				<h2 style="white-space: nowrap; font-size: 1.1em;">Узагальнений метод забезпечення вебдоступності</h2>
-				<div style="display: flex; gap: 20px; font-size: 0.58em;">
-					<div style="flex: 3; display: flex; align-items: center;">
-						<img src="examples/assets/2_9.png"
-							style="max-height: 520px; max-width: 100%; border-radius: 8px;">
-					</div>
-					<div style="flex: 3; display: flex; flex-direction: column; gap: 6px; justify-content: flex-start;">
-						<div class="formula-box" style="font-size: 1.1em; padding: 8px 14px;">
-							y* = arg max<sub>y∈Y</sub> J(y) = ΔІКД(x, y, S) − λ₁·ΔLen − λ₂·Density − λ₃·SemanticRisk
-						</div>
-						<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-							<div class="highlight-box" style="padding: 6px 10px;">
-								<strong>Аналітичний контур</strong><br>ІКД, детекція бар'єрів за 7 категоріями з
-								координатами
-							</div>
-							<div class="highlight-box" style="padding: 6px 10px;">
-								<strong>Модуль трансформацій</strong><br>Лексична заміна · пояснення · синтаксис ·
-								генеративний резерв
-							</div>
-							<div class="highlight-box-orange" style="padding: 6px 10px;">
-								<strong>Контроль якості</strong><br>Повторна оцінка ІКД, семантична еквівалентність,
-								журнал
-								змін
-							</div>
-							<div class="highlight-box" style="padding: 6px 10px;">
-								<strong>3 режими</strong><br>Документний<br>Сторінковий<br>Курсорний
-							</div>
-						</div>
-						<div class="highlight-box-orange" style="padding: 6px 10px;">
-							<strong>Стабільна емоція</strong> — контекстний параметр: негативний консенсус → допоміжний
-							режим
-						</div>
-					</div>
-				</div>
-				<aside class="notes">
-					Окремі компоненти — індекс когнітивної доступності, метод стабільної емоції та конвеєр лексичних
-					замін — об'єднано в узагальнений метод забезпечення вебдоступності тексту. Це керований
-					параметризований ітераційний процес, формалізований через функціонал корисності J. Функціонал J
-					максимізує приріст ІКД і водночас накладає три штрафні обмеження: за надмірну зміну довжини тексту,
-					за високу щільність правок та за ризик семантичного зсуву. Таким чином, метод не просто спрощує
-					текст, а шукає оптимальний баланс між доступністю та збереженням змісту. Метод працює у трьох
-					взаємопов'язаних контурах. Аналітичний контур обчислює ІКД і виконує пакетну детекцію бар'єрів семи
-					категорій з фіксацією їх координат у тексті. Модуль трансформацій реалізує лексичну заміну,
-					пояснення термінів, синтаксичне спрощення та генеративний резерв. Контроль якості після кожної
-					ітерації повторно обчислює ІКД, перевіряє семантичну еквівалентність та веде журнал змін.
-				</aside>
-			</section>
-
-			<!-- Слайд 14: Трирівнева архітектура -->
-			<section>
-				<h2 style="margin-bottom: 5px;">Архітектура програмного комплексу</h2>
-				<div style="display: flex; gap: 14px; font-size: 0.65em;">
-					<div style="flex: 3; display: flex; align-items: center;">
-						<img src="examples/assets/3_2_.png"
-							style="max-height: 525px; max-width: 100%; border-radius: 8px;">
-					</div>
-					<div
-						style="flex: 2; display: flex; flex-direction: column; gap: 4px; justify-content: center; font-size: 1.25em;">
-						<div class="impl-card" style="border-left: 4px solid var(--ztu-orange); padding: 20px 14px;">
-							<strong class="ztu-orange">Клієнтський рівень</strong>
-							<p style="margin: 4px 0 0 0;">Редактор · пагінація · підсвітка бар'єрів · вибір режиму · TTS
-							</p>
-						</div>
-						<div class="impl-card" style="border-left: 4px solid var(--ztu-red); padding: 20px 14px;">
-							<strong class="ztu-red">Сервіс аналізу та спрощення</strong>
-							<p style="margin: 4px 0 0 0;">Пакетна детекція · ІКД · ітераційне спрощення · словникові
-								заміни · синтаксис</p>
-						</div>
-						<div class="impl-card" style="border-left: 4px solid var(--ztu-blue); padding: 20px 14px;">
-							<strong class="ztu-orang">Сервіс емоцій</strong>
-							<p style="margin: 4px 0 0 0;">Відеопотік · FER · двоканальна стабілізація · негативний
-								консенсус</p>
-						</div>
-						<div class="impl-card" style="border-left: 4px solid var(--ztu-green); padding: 20px 14px;">
-							<strong class="ztu-green">Рівень моделей та ресурсів</strong>
-							<p style="margin: 4px 0 0 0;">NLP-конвеєр · морфоаналіз · 7 словників · термінодетектор ·
-								LLM-резерв</p>
-						</div>
-					</div>
-				</div>
-				<aside class="notes">
-					Далі розглянемо програмну реалізацію. Програмний комплекс побудовано з трирівневою архітектурою, де
-					кожен рівень виконує чітко визначену функцію. Клієнтський рівень — React-застосунок з редактором
-					тексту, посторінковою навігацією, підсвіткою виявлених бар'єрів, вибором режиму роботи та синтезом
-					мовлення. Сервіс аналізу та спрощення — Flask API, що об'єднує обчислення ІКД, ітераційне спрощення
-					та конвеєр лексичних замін на базі NLP-конвеєра Stanza для української мови. Сервіс емоцій —
-					незалежний мікросервіс на базі DeepFace, що обробляє відеопотік, розпізнає вираз обличчя та
-					забезпечує двоканальну стабілізацію з правилом негативного консенсусу. Рівень моделей та ресурсів
-					охоплює морфоаналізатор pymorphy2, сім категоріальних словників, NER-термінодетектор та LLM-моделі
-					резервного рівня.
-				</aside>
-			</section>
-
-			<!-- ============================================ -->
-			<!-- КРОК 4: Програмна реалізація (слайди 15-17)  -->
-			<!-- ============================================ -->
-
-			<!-- Слайд 15: Алгоритм ітераційного спрощення -->
-			<section>
-				<h2 style="margin-bottom: 5px; font-size: 32px;">Алгоритм ітераційного спрощення</h2>
-				<div style="display: flex; gap: 24px; font-size: 0.6em; align-items: center; margin-top: -20px;">
-					<div style="flex: 3; display: flex; align-items: center; justify-content: center;">
-						<img src="examples/assets/2_8.png"
-							style="max-height: 580px; max-width: 95%; border-radius: 8px;">
-					</div>
-					<div
-						style="flex: 2; display: flex; flex-direction: column; gap: 8px; justify-content: space-between; font-size: 1.35em;">
-						<div class="impl-card" style="border-left: 4px solid var(--ztu-blue); padding: 8px 10px;">
-							<strong class="ztu-blue">Три точки входу</strong>
-							<p style="margin: 3px 0 0 0;">document — весь текст; page — видима сторінка; cursor — вікно
-								1200 символів від позиції</p>
-						</div>
-						<div class="impl-card" style="border-left: 4px solid var(--ztu-orange); padding: 8px 10px;">
-							<strong class="ztu-orange">Застосування замін справа-наліво</strong>
-							<p style="margin: 3px 0 0 0;">Зберігає координати решти кандидатів без перерахунку індексів
-							</p>
-						</div>
-						<div class="impl-card" style="border-left: 4px solid var(--ztu-green); padding: 8px 10px;">
-							<strong class="ztu-green">4-рівнева ієрархія замін</strong>
-							<p style="margin: 3px 0 0 0;">Словник → fallback → POS-фільтрація → морфологічне узгодження
-								готової словоформи</p>
-						</div>
-						<div class="impl-card" style="border-left: 4px solid var(--ztu-red); padding: 8px 10px;">
-							<strong class="ztu-red">LLM як резервний рівень</strong>
-							<p style="margin: 3px 0 0 0;">Генерація лише за відсутності словникового кандидата;
-								результат кешується у словник</p>
-						</div>
-						<div class="impl-card" style="border-left: 4px solid #9b59b6; padding: 8px 10px;">
-							<strong style="color: #9b59b6;">Синтаксичне доопрацювання</strong>
-							<p style="margin: 3px 0 0 0;">Після лексичних замін, під окремим контролем з мінімальним
-								порогом покращення</p>
-						</div>
-					</div>
-				</div>
-				<aside class="notes">
-					Алгоритм реалізує узагальнений метод як п'ятиетапний ітераційний процес. Три точки входу
-					відповідають описаним режимам: документний обробляє весь текст, сторінковий — видиму сторінку,
-					курсорний — вікно з 1200 символів від позиції користувача. Ключове інженерне рішення — застосування
-					замін справа-наліво, що зберігає координати ще не оброблених кандидатів без перерахунку індексів.
-					LLM використовується виключно як резервний рівень за відсутності словникового кандидата, а результат
-					кешується у словник для повторного використання. Синтаксичне доопрацювання виконується після
-					лексичних замін під окремим контролем з мінімальним порогом покращення. Відтворюваність результатів
-					забезпечується кешуванням проміжних обчислень, фіксацією параметрів запуску та журналуванням усіх
-					застосованих трансформацій.
-				</aside>
-			</section>
-
-			<!-- Слайд 16: Три режими роботи -->
-			<section>
-				<h2 style="margin-bottom: 5px;">Сценарії клієнтської взаємодії</h2>
-				<div style="display: flex; gap: 24px; font-size: 0.6em; align-items: center; margin-top: -20px;">
-					<div style="flex: 3; display: flex; align-items: center; justify-content: center;">
-						<img src="examples/assets/3_3.png"
-							style="max-height: 550px; max-width: 95%; border-radius: 8px;">
-					</div>
-					<div
-						style="flex: 2; display: flex; flex-direction: column; gap: 8px; justify-content: space-between; font-size: 1.35em;">
-						<div class="impl-card" style="border-left: 4px solid var(--ztu-blue); padding: 8px 10px;">
-							<strong class="ztu-blue">Документний режим</strong>
-							<p style="margin: 3px 0 0 0;">Весь текст · steps 5 · max 20 замін · повторна детекція кожні
-								3 ітерації</p>
-						</div>
-						<div class="impl-card" style="border-left: 4px solid var(--ztu-orange); padding: 8px 10px;">
-							<strong class="ztu-orange">Сторінковий режим</strong>
-							<p style="margin: 3px 0 0 0;">Видима сторінка · steps 5 · max 10 замін · диференціація
-								складності по частинах</p>
-						</div>
-						<div class="impl-card" style="border-left: 4px solid var(--ztu-green); padding: 8px 10px;">
-							<strong class="ztu-green">Курсорний режим</strong>
-							<p style="margin: 3px 0 0 0;">Вікно 1200 символів від позиції · steps 5 · max 10 замін ·
-								детекція кожну ітерацію</p>
-						</div>
-						<div class="impl-card" style="border-left: 4px solid #555; padding: 8px 10px;">
-							<strong>Емоційний канал</strong>
-							<p style="margin: 3px 0 0 0;">Стабілізована емоція визначає момент запуску наступної
-								ітерації та активацію допоміжного режиму</p>
-						</div>
-						<div class="impl-card" style="border-left: 4px solid #9b59b6; padding: 8px 10px;">
-							<strong style="color: #9b59b6;">Формування контексту</strong>
-							<p style="margin: 3px 0 0 0;">Режим визначає область S, параметри θ та пріоритизацію
-								кандидатів</p>
-						</div>
-					</div>
-				</div>
-				<aside class="notes">
-					Три режими роботи відрізняються насамперед характером взаємодії з користувачем. У документному
-					режимі система зменшує рівень складності всього документа цілком — це пакетна обробка, де користувач
-					отримує спрощений результат після завершення циклу ітерацій. Сторінковий режим шукає баланс між
-					якістю поточної сторінки та підготовкою наступних — система враховує диференціацію складності по
-					частинах тексту і застосовує попереднє спрощення для сусідніх сторінок. Курсорний режим забезпечує
-					максимальний фокус на поточному стані користувача — система працює у вікні навколо позиції курсора з
-					детекцією на кожній ітерації, що дає найвищу точність саме в зоні читання.
-				</aside>
-			</section>
-
-			<!-- Слайд 17: Інтерфейс програмного комплексу -->
-			<section>
-				<h2 style="margin-bottom: 5px;">Інтерфейс програмного комплексу</h2>
-				<div style="display: flex; gap: 14px; font-size: 0.6em;">
-					<div style="flex: 1; display: flex; align-items: flex-start;">
-						<img src="examples/assets/Interface.png"
-							style="max-height: 530px; max-width: 100%; border-radius: 8px;">
-					</div>
-					<div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
-						<img src="examples/assets/black.png" style="max-width: 100%; border-radius: 8px;">
-						<div
-							style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 14px; font-size: 0.95em; text-align: left;">
-							<div
-								style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">1.</span>
-								Заголовок системи
-							</div>
-							<div
-								style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">2.</span> Поле
-								введення тексту
-							</div>
-							<div
-								style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">3.</span>
-								Параметри спрощення
-							</div>
-							<div
-								style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">4.</span>
-								Область аналізу
-							</div>
-							<div
-								style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">5.</span> TTS,
-								стоп-слова, LLM
-							</div>
-							<div
-								style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">6.</span> Текст
-								із маркуванням
-							</div>
-							<div
-								style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">7.</span>
-								Навігація сторінки
-							</div>
-							<div
-								style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">8.</span>
-								Перевірка тексту
-							</div>
-							<div
-								style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">9.</span>
-								POS-аналіз
-							</div>
-							<div
-								style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">10.</span>
-								Коефіцієнти ІКД
-							</div>
-							<div
-								style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0; border-bottom: 1px solid #e0e0e0;">
-								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">11.</span>
-								Лінгвістичні метрики
-							</div>
-							<div style="display: flex; align-items: baseline; gap: 6px; padding: 3px 0;">
-								<span style="color: var(--ztu-red); font-weight: bold; min-width: 22px;">12.</span>
-								Підвал та посилання
-							</div>
-						</div>
-					</div>
-				</div>
-				<aside class="notes">
-					Інтерфейс представлено на екрані. Зліва — основне вікно застосунку, справа — режим високого
-					контрасту з чорно-білою палітрою для користувачів із порушеннями зору. Редактор використовує
-					спеціалізований шрифт підвищеної розбірливості зі збільшеним міжлітерним інтервалом — це важливо для
-					користувачів із дислексією. Проблемні ділянки виділяються кольоровим маркуванням за типом бар'єру.
-					Підсистема синтезу мовлення на базі Silero TTS озвучує текст українською з синхронною підсвіткою
-					активного слова у редакторі. Потокова передача дозволяє розпочати відтворення під час синтезу
-					наступних речень. Також інтегровано модуль клієнтської оцінки досвіду зі збором структурованого
-					зворотного зв'язку, безпрокруткову посторінкову навігацію, візуалізацію компонентів ІКД та
-					POS-аналіз.
-				</aside>
-			</section>
-
-			<!-- ============================================ -->
-			<!-- КРОК 5: Експерименти (слайди 18-24)           -->
-			<!-- ============================================ -->
-
-			<!-- Слайд 18: Експеримент 1 — Конвергенція -->
-			<section>
-				<h2>Експеримент 1: Конвергенція ітераційного спрощення</h2>
-				<div style="font-size: 0.62em; display: flex; gap: 14px;">
-					<div style="flex: 1;">
-						<img src="examples/assets/exp01_convergence_chart.png" style="width: 100%; border-radius: 8px;">
-					</div>
-					<div style="flex: 1;">
-						<p style="margin: 0 0 8px 0;">Контрольований корпус: <strong>10 текстів</strong>, 5 категорій
-							бар'єрів, 35–80 слів</p>
-						<table class="compact-table" style="font-size: 0.9em;">
-							<tr>
-								<th>Показник</th>
-								<th>Значення</th>
-							</tr>
-							<tr>
-								<td>Середній ΔІКД</td>
-								<td><strong>+0,028</strong></td>
-							</tr>
-							<tr>
-								<td>Ітерацій до стабілізації</td>
-								<td><strong>1–3</strong> (сер. 1,8)</td>
-							</tr>
-							<tr>
-								<td>Загальна кількість замін</td>
-								<td><strong>59</strong></td>
-							</tr>
-							<tr>
-								<td>Монотонність</td>
-								<td><strong>10/10</strong> ✓</td>
-							</tr>
-						</table>
-						<div style="margin-top: 10px; display: flex; flex-direction: column; gap: 3px;">
-							<div class="highlight-box" style="padding: 6px 10px;">
-								<strong>ІКД монотонно зростає</strong> — жодного випадку регресу
-							</div>
-							<div class="highlight-box" style="padding: 6px 10px;">
-								<strong>Збіжність за 1–3 ітерації</strong> — навіть для текстів з максимальною щільністю
-								бар'єрів (C10: ΔІКД = +0,045)
-							</div>
-							<div class="highlight-box" style="padding: 6px 10px;">
-								Домінування архаїзмів — <strong>49%</strong> замін (7 428 записів у словнику)
-							</div>
-						</div>
-					</div>
-				</div>
-				<aside class="notes">
-					Ефективність запропонованого методу перевірено серією з восьми експериментів на контрольованому
-					корпусі з десяти україномовних текстів різних жанрів та рівнів складності. Перший експеримент
-					перевіряв збіжність ітераційного алгоритму. Метод перевірки — багаторазовий прогін алгоритму на всіх
-					десяти текстах корпусу з фіксацією значення ІКД після кожної ітерації та перевіркою монотонності
-					послідовності. ІКД монотонно зростає або залишається незмінним між послідовними ітераціями у всіх
-					десяти текстах — жодного випадку регресу. Алгоритм досягає стабільного стану за одну–три ітерації із
-					середнім значенням 1,8 ітерації на текст.
-				</aside>
-			</section>
-
-			<!-- Слайд 19: Експеримент 2 — Семантична еквівалентність -->
-			<section>
-				<h2>Експеримент 2: Семантична еквівалентність</h2>
-				<div style="font-size: 0.58em;">
-					<div style="text-align: center; margin-bottom: 6px;">
-						<img src="examples/assets/exp04_semantic_chart.png"
-							style="max-height: 280px; max-width: 100%; border-radius: 8px;">
-					</div>
-					<div style="display: flex; gap: 10px; align-items: start;">
-						<table class="compact-table" style="font-size: 0.9em; flex: 1;">
-							<tr>
-								<th>Показник</th>
-								<th>Значення</th>
-							</tr>
-							<tr>
-								<td>Середня подібність</td>
-								<td><strong>0,918</strong></td>
-							</tr>
-							<tr>
-								<td>Діапазон</td>
-								<td>0,802 — 0,966</td>
-							</tr>
-							<tr>
-								<td>Текстів > 0,90</td>
-								<td><strong>7 / 10</strong></td>
-							</tr>
-							<tr>
-								<td>Текстів > 0,95</td>
-								<td><strong>4 / 10</strong></td>
-							</tr>
-						</table>
-						<div style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
-							<div class="highlight-box" style="padding: 4px 8px;">
-								<strong>Всі значення > 0,80</strong> — зміст зберігається
-							</div>
-							<div class="highlight-box" style="padding: 4px 8px;">
-								C09: 0,802 — розшифрування абревіатур змінює форму, не зміст
-							</div>
-							<div class="highlight-box" style="padding: 4px 8px;">
-								Кореляція: замін ↑ → подібність ↓ (r = −0,32)
-							</div>
-						</div>
-					</div>
-				</div>
-				<aside class="notes">
-					Другий експеримент дозволив перевірити збереження змісту тексту після спрощення. Всі отримані
-					значення утримуються в діапазоні високої семантичної еквівалентності.
-				</aside>
-			</section>
-
-			<!-- Слайд 20: Експеримент 3 — Чутливість до параметрів -->
-			<section>
-				<h2>Експеримент 3: Чутливість до параметрів</h2>
-				<div style="font-size: 0.58em;">
-					<div style="text-align: center; margin-bottom: 6px;">
-						<img src="examples/assets/exp05_sensitivity_chart.png"
-							style="max-height: 330px; max-width: 100%; border-radius: 8px;">
-					</div>
-					<div style="display: flex; gap: 10px; align-items: start; font-size: 1.2em;">
-						<div style="flex: 1; display: flex; flex-direction: column; gap: 3px;">
-							<div class="impl-card" style="border-left: 4px solid var(--ztu-blue); padding: 6px 10px;">
-								<strong class="ztu-blue">Поріг впевненості (0,3–1,0)</strong> — результат
-								<strong>ідентичний</strong>, 6/7 детекторів словникові
-							</div>
-							<div class="impl-card" style="border-left: 4px solid var(--ztu-orange); padding: 6px 10px;">
-								<strong class="ztu-orange">Максимум ітерацій (1–10)</strong> — 1 ітерація → 67%;
-								<strong>від 3
-									— плато</strong> (100%)
-							</div>
-							<div class="impl-card" style="border-left: 4px solid var(--ztu-green); padding: 6px 10px;">
-								<strong class="ztu-green">Замін за ітерацію (1–50)</strong> — 1 заміна/ітер. →
-								компенсація, результат <strong>94%</strong>
-							</div>
-						</div>
-						<div style="flex: 1; display: flex; align-items: start;">
-							<div class="highlight-box" style="padding: 6px 10px;">
-								<strong>Внутрішня стійкість:</strong> ітераційний механізм компенсує обмеження окремих
-								параметрів
-							</div>
-						</div>
-					</div>
-				</div>
-				<aside class="notes">
-					Третій експеримент оцінював стійкість алгоритму до зміни конфігурації. Метод — це почергове
-					варіювання трьох параметрів: порогу впевненості детекторів, кількості ітерацій та кількості замін за
-					ітерацію. Поріг впевненості практично не впливає на результат: при зміні від 0,3 до 1,0 кількість
-					замін та приріст ІКД залишаються незмінними, оскільки шість із семи детекторів є словниковими.
-				</aside>
-			</section>
-
-			<!-- Слайд 21: Експеримент 4 — Крос-жанрова стійкість -->
-			<section>
-				<h2>Експеримент 4: Крос-жанрова стійкість</h2>
-				<div style="font-size: 0.58em;">
-					<div style="text-align: center; margin-bottom: 6px;">
-						<img src="examples/assets/exp06_cross_genre_chart.png"
-							style="max-height: 280px; max-width: 100%; border-radius: 8px;">
-					</div>
-					<div style="display: flex; gap: 10px; align-items: start;">
-						<table class="compact-table" style="font-size: 0.9em; flex: 1;">
-							<tr>
-								<th>Група</th>
-								<th>Сер. ΔІКД</th>
-							</tr>
-							<tr>
-								<td>Прості (n=2)</td>
-								<td><strong>+0,032</strong></td>
-							</tr>
-							<tr>
-								<td>Середні (n=3)</td>
-								<td><strong>+0,024</strong></td>
-							</tr>
-							<tr>
-								<td>Складні (n=5)</td>
-								<td><strong>+0,030</strong></td>
-							</tr>
-						</table>
-						<table class="compact-table" style="font-size: 0.9em; flex: 1;">
-							<tr>
-								<th>Категорій</th>
-								<th>Сер. ΔІКД</th>
-								<th>Замін</th>
-							</tr>
-							<tr>
-								<td>1–2</td>
-								<td>+0,018</td>
-								<td>2,7</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>+0,027</td>
-								<td>8,0</td>
-							</tr>
-							<tr>
-								<td>4+</td>
-								<td><strong>+0,034</strong></td>
-								<td>8,5</td>
-							</tr>
-						</table>
-						<div style="flex: 1;">
-							<div class="highlight-box" style="padding: 4px 8px;">
-								Монотонна тенденція: <strong>більше категорій → вищий ΔІКД</strong> завдяки
-								пріоритетному механізму
-							</div>
-						</div>
-					</div>
-				</div>
-				<aside class="notes">
-					Четвертий експеримент перевіряв універсальність алгоритму. Метод — аналогічно до першого
-					експерименту, результати згруповано за жанром, рівнем складності та кількістю категорій бар'єрів.
-					Алгоритм забезпечує позитивний приріст ІКД для всіх десяти текстів незалежно від жанру. В результаті
-					встановлено, що тексти з більшою кількістю категорій демонструють вищий приріст ІКД завдяки
-					пріоритетному механізму обходу типів.
-				</aside>
-			</section>
-
-			<!-- Слайд 22: Експеримент 5 — Масштабованість -->
-			<section>
-				<h2>Експеримент 5: Масштабованість алгоритму</h2>
-				<div style="font-size: 0.58em;">
-					<div style="text-align: center; margin-bottom: 6px;">
-						<img src="examples/assets/exp07_scalability_chart.png"
-							style="max-height: 280px; max-width: 100%; border-radius: 8px;">
-					</div>
-					<div style="display: flex; gap: 10px; align-items: start;">
-						<table class="compact-table" style="font-size: 0.9em; flex: 1;">
-							<tr>
-								<th>Компонент</th>
-								<th>Складність</th>
-							</tr>
-							<tr>
-								<td>Повний цикл</td>
-								<td><strong>O(n<sup>1.30</sup>)</strong></td>
-							</tr>
-							<tr>
-								<td>Обчислення ІКД</td>
-								<td>O(n<sup>1.39</sup>)</td>
-							</tr>
-							<tr>
-								<td>Детекція бар'єрів</td>
-								<td>O(n<sup>0.98</sup>) ≈ лінійна</td>
-							</tr>
-						</table>
-						<div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
-							<div class="highlight-box" style="padding: 4px 8px;">
-								355 слів → <strong>55 с</strong> (повний цикл спрощення)
-							</div>
-							<div class="highlight-box" style="padding: 4px 8px;">
-								Детекція лінійна — словниковий пошук
-							</div>
-							<div class="highlight-box" style="padding: 4px 8px;">
-								> 1000 слів → <strong>сторінковий або курсорний режим</strong>
-							</div>
-						</div>
-					</div>
-				</div>
-				<aside class="notes">
-					П'ятий експеримент оцінював масштабованість алгоритму. Метод — тиражування тексту C10 з максимальною
-					щільністю бар'єрів за коефіцієнтами від 1 до 20, що дає обсяг від 71 до 1420 слів, з вимірюванням
-					часу трьох компонентів обробки: ІКД, детекція та повний цикл.
-				</aside>
-			</section>
-
-			<!-- Слайд 23: Експеримент 6 — Синтаксична складність -->
-			<section>
-				<h2>Експеримент 6: Вплив на синтаксичну складність</h2>
-				<div style="font-size: 0.58em;">
-					<div style="text-align: center;">
-						<img src="examples/assets/exp09_syntactic_chart.png"
-							style="max-height: 260px; max-width: 100%; border-radius: 8px;">
-					</div>
-					<div style="display: flex; gap: 10px; align-items: start;">
-						<table class="compact-table" style="font-size: 0.9em; flex: 1;">
-							<tr>
-								<th>Метрика</th>
-								<th>Δ (середнє)</th>
-							</tr>
-							<tr>
-								<td>Глибина дерева залежностей</td>
-								<td><strong>+0,10</strong></td>
-							</tr>
-							<tr>
-								<td>Підрядні конструкції</td>
-								<td>зміна у <strong>2 / 10</strong></td>
-							</tr>
-							<tr>
-								<td>Довжина речення</td>
-								<td>+0,73 слова</td>
-							</tr>
-						</table>
-						<div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
-							<div class="highlight-box" style="padding: 4px 8px;">
-								<strong>Структура збережена</strong> — глибина дерева майже не змінилась
-							</div>
-							<div class="highlight-box" style="padding: 4px 8px;">
-								Довші речення — розшифрування абревіатур (C09: +4,2)
-							</div>
-							<div class="highlight-box" style="padding: 4px 8px;">
-								Спрощення <strong>не змінює логічні зв'язки</strong>
-							</div>
-						</div>
-					</div>
-				</div>
-				<aside class="notes">
-					Шостий експеримент перевіряв збереження синтаксичної структури після лексичного спрощення. Метод —
-					порівняльний аналіз трьох синтаксичних метрик до та після спрощення за допомогою NLP-конвеєра Stanza
-					для української мови з модулем розбору залежностей. Середня глибина дерева залежностей практично не
-					змінилася. Кількість підрядних конструкцій змінилася лише у двох з десяти текстів на одну одиницю.
-				</aside>
-			</section>
-
-			<!-- Слайд 24: Експеримент 7 — Стабільність емоційного тону -->
-			<section>
-				<h2>Експеримент 7: Стабільність емоційного тону</h2>
-				<div style="font-size: 0.58em;">
-					<div style="text-align: center; margin-bottom: 6px;">
-						<img src="examples/assets/exp11_sentiment_chart.png"
-							style="max-height: 280px; max-width: 100%; border-radius: 8px;">
-					</div>
-					<div style="display: flex; gap: 10px; align-items: start;">
-						<table class="compact-table" style="font-size: 0.9em; flex: 1;">
-							<tr>
-								<th>Показник</th>
-								<th>Значення</th>
-							</tr>
-							<tr>
-								<td>Збережено тональність</td>
-								<td><strong>10 / 10</strong> ✓</td>
-							</tr>
-							<tr>
-								<td>Максимальне відхилення</td>
-								<td><strong>0,090</strong></td>
-							</tr>
-							<tr>
-								<td>Нейтральних</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Негативних</td>
-								<td>3</td>
-							</tr>
-						</table>
-						<div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
-							<div class="highlight-box" style="padding: 4px 8px;">
-								<strong>Жоден текст не змінив категорію</strong> тональності
-							</div>
-							<div class="highlight-box" style="padding: 4px 8px;">
-								Зміщення до нейтральності (Δ = +0,070) — ефект заміни стилістичної лексики
-							</div>
-							<div class="highlight-box" style="padding: 4px 8px;">
-								Спрощення <strong>не спотворює ні зміст, ні тональність</strong>
-							</div>
-						</div>
-					</div>
-				</div>
-				<aside class="notes">
-					Сьомий експеримент перевіряв збереження тональності тексту. Метод — аналогічно до другого
-					експерименту, із застосуванням мультимовної моделі аналізу тональності на базі XLM-RoBERTa, навченої
-					на ста мовах включно з українською, з класифікацією за трьома категоріями: негативна, нейтральна,
-					позитивна. Жоден з десяти текстів не змінив категорію тональності після спрощення. У поєднанні з
-					результатами другого та шостого експериментів це підтверджує, що спрощення не спотворює ні зміст, ні
-					синтаксис, ні тональність оригінального тексту.
-				</aside>
-			</section>
-
-			<!-- ============================================ -->
-			<!-- КРОК 6: Завершення (слайди 25-27)              -->
-			<!-- ============================================ -->
-
-			<!-- Слайд 25: Висновки -->
-			<section>
-				<h2>Висновки <span style="font-size: 0.6em; color: #999;">(1/2)</span></h2>
-				<div style="font-size: 0.82em;">
-					<div style="display: flex; flex-direction: column; gap: 8px;">
-						<div class="conclusion-item"
-							style="border-left: 4px solid var(--ztu-blue); padding: 5px 12px; background: rgba(34,74,152,0.05); border-radius: 6px; margin: 0;">
-							<strong class="ztu-blue">Проведений</strong> комплексний аналіз наявних методів оцінювання
-							та адаптації текстового вебконтенту для людей з когнітивними та інтелектуальними порушеннями
-							дозволяє стверджувати, що класичні індекси читабельності (Flesch–Kincaid, Gunning Fog, SMOG)
-							не забезпечують діагностичної повноти для виявлення когнітивних бар'єрів і є непридатними
-							для морфологічно складних мов, зокрема української. Наявні рішення залишаються
-							фрагментарними та мовно залежними, що обґрунтовує доцільність гібридного підходу з
-							поєднанням правилових, статистичних та нейромережевих компонентів із вимогами
-							інтерпретованості, локалізації бар'єрів та мовної адаптивності.
-						</div>
-						<div class="conclusion-item"
-							style="border-left: 4px solid var(--ztu-orange); padding: 5px 12px; background: rgba(238,120,28,0.05); border-radius: 6px; margin: 0;">
-							<strong class="ztu-orange">Розроблено</strong> метод визначення індексу когнітивної
-							доступності тексту (ІКД) як інтегрального нормованого показника у шкалі [0; 1] з поєднанням
-							лексичного, синтаксичного компонентів та компонента читабельності з емпірично верифікованими
-							ваговими коефіцієнтами. Побудовано п'ятирівневу шкалу категоризації текстів від «Відмінна
-							доступність» до «Дуже складний текст». Серія з восьми обчислювальних експериментів на
-							корпусі з десяти текстів підтвердила коректну фіксацію покращення когнітивної доступності
-							індексом ІКД (10/10 текстів), тоді як класичні індекси читабельності не зафіксували жодного
-							покращення (0/10).
-						</div>
-						<div class="conclusion-item"
-							style="border-left: 4px solid var(--ztu-red); padding: 5px 12px; background: rgba(229,62,35,0.04); border-radius: 6px; margin: 0;">
-							<strong class="ztu-red">Розроблено</strong> метод визначення стабільної емоції розуміння
-							тексту користувачем на основі розпізнавання виразу обличчя через відеокамеру в реальному
-							часі. Формалізовано модель часової стабілізації з чотирма незалежними каналами агрегації
-							(короткостроковий та довгостроковий для емоцій і станів) та правилом негативного консенсусу.
-							Значення параметрів кожного каналу (коефіцієнт затухання, поріг активації, мінімальна
-							кількість спостережень) отримано за протоколом програмної калібрації на базі телеметричного
-							корпусу з трьох серій з аналітичним виведенням коефіцієнтів під обмеження часу реакції та
-							ефективної пам'яті фільтра.
-						</div>
-					</div>
-				</div>
-				<aside class="notes">
-					На підставі проведеного дослідження сформульовано висновки, що представлені на слайді та у
-					авторефераті, тому дозвольте їх не зачитувати.
-				</aside>
-			</section>
-
-			<!-- Слайд 25б: Висновки (2/2) -->
-			<section>
-				<h2>Висновки <span style="font-size: 0.6em; color: #999;">(2/2)</span></h2>
-				<div style="font-size: 1em;">
-					<div style="display: flex; flex-direction: column; gap: 8px;">
-						<div class="conclusion-item"
-							style="border-left: 4px solid var(--ztu-green); padding: 5px 12px; background: rgba(76,173,59,0.05); border-radius: 6px; margin: 0;">
-							<strong class="ztu-green">Розроблено</strong> метод забезпечення вебдоступності тексту як
-							керований ітераційний процес з поєднанням оцінювання якості за ІКД, детекції бар'єрів,
-							побудови трансформацій та контролю семантичної еквівалентності. Метод реалізує ієрархічну
-							систему пріоритетів обробки семи категорій когнітивних бар'єрів з детермінованою
-							чотирирівневою ієрархією замін та морфологічним узгодженням на базі спеціалізованих
-							словників для когнітивної адаптації україномовного тексту. Гібридна LLM-інтеграція
-							забезпечує резервний рівень генерації за відсутності словникового кандидата.
-						</div>
-						<div class="conclusion-item"
-							style="border-left: 4px solid #9b59b6; padding: 5px 12px; background: rgba(155,89,182,0.05); border-radius: 6px; margin: 0;">
-							<strong style="color: #9b59b6;">Здійснено</strong> програмну реалізацію методу як
-							браузерного комплексу з трирівневою архітектурою та адаптивним інтерфейсом із синтезом
-							мовлення, синхронною підсвіткою та безпрокрутковою навігацією відповідно до вимог WCAG 2.2.
-							Проведено серію з восьми обчислювальних експериментів.
-						</div>
-					</div>
-				</div>
-				<aside class="notes">
-					На підставі проведеного дослідження сформульовано висновки, що представлені на слайді та у
-					авторефераті, тому дозвольте їх не зачитувати.
-				</aside>
-			</section>
-
-			<!-- Слайд 27: Титулка (копія слайда 1) -->
-			<section style="margin-top: -25px;">
-				<p style="font-size: 0.45em; color: #777; text-align: center; margin: 0 0 100px 0;">
+				<p style="font-size: 0.5em; color: #777; text-align: center; margin: 40px 0 0 0;">Державний
+					університет «Житомирська політехніка»</p>
+				<p style="font-size: 0.5em; color: #777; text-align: center; margin: 6px 0 70px 0;">Факультет
+					інформаційно-комп'ютерних технологій</p>
+				<h1 style="font-size: 1.7em; line-height: 1.25; text-align: center; margin: 0;">Засідання кафедри
+					<span class="ztu-blue">інженерії програмного забезпечення</span>
+				</h1>
+				<p style="font-size: 0.6em; color: #555; text-align: center; margin: 40px 0 0 0;">12 серпня 2026 року
 				</p>
-				<h2 style="font-size: 1.3em; line-height: 1.3; text-align: center; margin: 0 0 30px 0;">Методи і
-					алгоритми забезпечення вебдоступності тексту для людей з когнітивними та інтелектуальними
-					порушеннями</h2>
-				<div class="title-meta" style="text-align: center; margin: 0 0 60px 0; font-size: 0.7em;">
-					<span>Дисертація на здобуття наукового ступеня <strong>доктора філософії</strong></span>
-					<span>Спеціальність: <em>121 Інженерія програмного забезпечення</em></span>
-				</div>
-				<div style="text-align: right; font-size: 0.6em; margin: 0 40px 0 0;">
-					<p style="margin: 5px 0;">Виконав: <strong>Савіцький Роман Святославович</strong></p>
-					<p style="margin: 5px 0;">Науковий керівник: <strong>д.п.н., проф. Вакалюк Тетяна
-							Анатоліївна</strong></p>
-				</div>
-				<p style="font-size: 0.65em; color: #999; text-align: center; margin: 100px 0 0 0;">Житомир – 2026</p>
-				<aside class="notes">
-					Шановний голово, шановні члени спеціалізованої вченої ради, шановні колеги! Дозвольте представити
-					дисертаційне дослідження на тему «Методи і алгоритми забезпечення вебдоступності тексту для людей з
-					когнітивними та інтелектуальними порушеннями», виконане на здобуття наукового ступеня доктора
-					філософії за спеціальністю 121 — Інженерія програмного забезпечення у Державному університеті
-					«Житомирська політехніка» під керівництвом доктора педагогічних наук, професора Вакалюк Тетяни
-					Анатоліївни. Актуальність дослідження зумовлена тим, що когнітивні та інтелектуальні порушення
-					охоплюють широкий спектр станів — від синдрому дефіциту уваги та гіперактивності до розладів
-					аутистичного спектра. За даними Всесвітньої організації охорони здоров'я, понад мільярд людей у
-					світі мають ту чи іншу форму інвалідності. Для цієї категорії осіб складність текстового контенту є
-					системним бар'єром, що обмежує можливості в повноцінній участі в суспільному житті. Наявні системи
-					спрощення тексту переважно реалізують статичний підхід без урахування індивідуального когнітивного
-					стану конкретного читача в момент взаємодії. Натомість поєднання автоматизованого аналізу тексту з
-					неінвазивним моніторингом емоційного стану через вбудовану відеокамеру відкриває можливість
-					реалізувати адаптивне спрощення, що орієнтується на реальний стан конкретного користувача.
-				</aside>
+				<img src="examples/assets/kafedra_se_logo_ua.png" alt="Інженерія програмного забезпечення"
+					style="max-height: 160px; width: auto; display: block; margin: 40px auto 0;">
 			</section>
 
 		</div>
