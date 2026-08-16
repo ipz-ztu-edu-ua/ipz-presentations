@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 exp05_sensitivity_chart.py)",
+      "Bash(python3 -m pip install matplotlib numpy --quiet)",
+      "Bash(python3 exp11_sentiment_chart.py)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'feat: refine defense slides and experiment charts *)",
+      "Bash(git push *)"
+    ]
+  }
+}

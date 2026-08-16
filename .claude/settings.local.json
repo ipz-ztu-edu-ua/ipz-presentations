@@ -6,7 +6,22 @@
       "Bash(pandoc \"tmp_source/Дисертація_Савіцький.docx\" -t plain --wrap=none)",
       "WebFetch(domain:roman-savitskyi.github.io)",
       "Bash(git checkout main)",
-      "Bash(git stash --include-untracked)"
+      "Bash(git stash --include-untracked)",
+      "mcp__claude_ai_Google_Drive__read_file_content",
+      "Bash(jq -r .fileContent /Users/savitskyiroman/.claude/projects/-Users-savitskyiroman-Documents-conf-topics-2025/23d8edbe-e5b2-4e9c-94c6-3c120cc98660/tool-results/mcp-claude_ai_Google_Drive-read_file_content-1785844812055.txt)",
+      "Bash(echo \"exit: $?\")",
+      "Read(//tmp/**)",
+      "Bash(mkdir -p '/private/tmp/claude-501/-Users-savitskyiroman-Documents-conf-topics-2025/23d8edbe-e5b2-4e9c-94c6-3c120cc98660/tasks')",
+      "Bash(echo \"mkdir exit: $?\")",
+      "Read(//private/tmp/**)",
+      "Bash(mkdir -p '/private/tmp/claude-501/-Users-savitskyiroman-Documents-conf-topics-2025/23d8edbe-e5b2-4e9c-94c6-3c120cc98660' 2>&1; echo \"exit: $?\")",
+      "Bash(jq -r '.fileContent' \"/Users/savitskyiroman/.claude/projects/-Users-savitskyiroman-Documents-conf-topics-2025/23d8edbe-e5b2-4e9c-94c6-3c120cc98660/tool-results/mcp-claude_ai_Google_Drive-read_file_content-1785844812055.txt\" > /tmp/sheet.txt && wc -l /tmp/sheet.txt && wc -c /tmp/sheet.txt)",
+      "mcp__claude_ai_Google_Drive__list_recent_files",
+      "mcp__claude_ai_Google_Drive__get_file_metadata"
+    ],
+    "additionalDirectories": [
+      "/private/tmp/claude-501/-Users-savitskyiroman-Documents-conf-topics-2025",
+      "/tmp"
     ]
   }
 }
