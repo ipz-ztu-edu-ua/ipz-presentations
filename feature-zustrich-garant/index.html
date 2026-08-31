@@ -112,33 +112,44 @@
 			font-weight: 700;
 		}
 
-		/* ---- Timeline (academic year) ---- */
+		/* ---- Schedule (academic year) ---- */
 		.tl {
 			list-style: none;
-			max-width: 860px;
-			margin: 6px auto 0;
+			max-width: 980px;
+			margin: 10px auto 0;
 			padding: 0;
+			border: 1px solid #e2e6ef;
+			border-radius: 12px;
+			overflow: hidden;
+			box-shadow: 0 6px 20px rgba(34, 74, 152, 0.06);
 		}
 
 		.tl li {
-			display: flex;
-			gap: 16px;
-			align-items: baseline;
-			padding: 8px 0 8px 20px;
-			border-left: 3px solid var(--ztu-blue);
-			margin-left: 10px;
+			display: grid;
+			grid-template-columns: 280px 1fr;
+			gap: 22px;
+			align-items: center;
+			padding: 11px 22px;
+		}
+
+		.tl li:not(:last-child) {
+			border-bottom: 1px solid #edf0f6;
+		}
+
+		.tl li:nth-child(even) {
+			background: rgba(34, 74, 152, 0.045);
 		}
 
 		.tl .when {
 			font-weight: 700;
 			color: var(--ztu-blue);
-			min-width: 220px;
 			font-size: 0.68em;
+			white-space: nowrap;
 		}
 
 		.tl .what {
-			font-size: 0.7em;
-			color: #333;
+			font-size: 0.68em;
+			color: #2b2f36;
 		}
 
 		/* ---- Org chart ---- */
