@@ -423,6 +423,35 @@
 		}
 
 		/* ---- Alarm slide ---- */
+		.sits {
+			display: flex;
+			gap: 14px;
+			margin-top: 16px;
+		}
+
+		.sit {
+			flex: 1;
+			background: rgba(34, 74, 152, 0.05);
+			border-top: 3px solid var(--ztu-blue);
+			border-radius: 10px;
+			padding: 12px 14px;
+			text-align: left;
+		}
+
+		.sit h4 {
+			font-size: 0.56em;
+			color: var(--ztu-blue);
+			font-weight: 700;
+			line-height: 1.25;
+			margin-bottom: 6px;
+		}
+
+		.sit p {
+			font-size: 0.52em;
+			line-height: 1.4;
+			color: #333;
+		}
+
 		.alarm-banner {
 			background: rgba(229, 52, 31, 0.1);
 			border-left: 5px solid var(--ztu-red, #e5341f);
@@ -813,20 +842,29 @@
 
 			<!-- 10. Тривога -->
 			<section>
-				<h2 style="text-align: center; margin-bottom: 14px;">Дії під час повітряної тривоги</h2>
-				<div class="alarm-banner">
-					<p style="font-weight:700; margin-bottom:6px;">За сигналом тривоги — прямуємо в укриття</p>
-					Навчання призупиняється; після відбою — продовжуємо.
+				<h2 style="text-align: center; margin-bottom: 8px;">Дії під час повітряної тривоги</h2>
+				<div class="alarm-banner" style="font-size:0.62em;">
+					За сигналом тривоги — <strong>усі прямують в укриття (новий корпус)</strong>.
 				</div>
-				<div class="two-columns" style="font-size:0.66em;">
-					<div>
-						<p style="font-weight:700; color:var(--ztu-blue); margin-bottom:6px;">Куди йти</p>
-						<span class="ph">[розташування укриття в корпусі / найближче укриття]</span>
+				<div class="sits">
+					<div class="sit">
+						<h4>Ситуація 1. Триває з ночі</h4>
+						<p>Немає відбою за 10–60 хв до пар → перше заняття <strong>асинхронно</strong>. Наступне —
+							<strong>очно</strong>, якщо відбій за годину до початку.</p>
 					</div>
-					<div>
-						<p style="font-weight:700; color:var(--ztu-blue); margin-bottom:6px;">Як триває навчання</p>
-						<span class="ph">[регламент: пауза, перенесення, дистанційно — за потреби]</span>
+					<div class="sit">
+						<h4>Ситуація 2. Перед / під час / між заняттями</h4>
+						<p>Оголошено менше ніж за 10 хв до початку, під час або між заняттями → всі в укриття,
+							заняття <strong>через 15 хв після відбою</strong>.</p>
 					</div>
+					<div class="sit">
+						<h4>Ситуація 3. Триває станом на 15:00</h4>
+						<p>Усі заняття після відбою проводяться <strong>дистанційно</strong>.</p>
+					</div>
+				</div>
+				<div class="highlight-box-green" style="font-size:0.6em; margin-top:16px;">
+					<strong>Асинхронний режим:</strong> викладач розміщує завдання на <strong>Освітньому
+						порталі</strong>, студент виконує їх і надсилає викладачу.
 				</div>
 			</section>
 
