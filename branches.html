@@ -33,21 +33,32 @@
         a:hover {
             text-decoration: underline;
         }
+        .date {
+            color: #666;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
-    <h1>Available Presentation Branches</h1>
+    <h1>📊 Available Presentation Branches</h1>
     <ul id="branches"></ul>
     <script>
+        // Список буде оновлюватися автоматично
         const branches = [];
-        branches.push({ name: 'main', original: 'main' });
+        branches.push({ name: 'feature-info-kafedra', original: 'feature/info-kafedra', date: new Date().toISOString() });
+
         const ul = document.getElementById('branches');
-        branches.sort((a, b) => a.original.localeCompare(b.original));
         branches.forEach(branch => {
             const li = document.createElement('li');
-            li.innerHTML = '<a href="/ipz-presentations/' + branch.name + '/">' + branch.original + '</a>';
+            const date = new Date(branch.date).toLocaleString('uk-UA');
+            li.innerHTML = `
+                <a href="/${branch.name}/">🎯 ${branch.original}</a>
+                <span class="date">Оновлено: ${date}</span>
+            `;
             ul.appendChild(li);
         });
+
         if (branches.length === 0) {
             ul.innerHTML = '<li>Поки що немає доступних гілок</li>';
         }
