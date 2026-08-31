@@ -303,6 +303,76 @@
 			font-weight: 700;
 		}
 
+		/* ---- People cards (faculty / kafedra) ---- */
+		.people {
+			display: flex;
+			gap: 16px;
+			justify-content: center;
+			align-items: stretch;
+			margin-top: 20px;
+		}
+
+		.people .pc {
+			flex: 1;
+			max-width: 210px;
+			background: rgba(34, 74, 152, 0.05);
+			border-radius: 12px;
+			border-top: 4px solid var(--ztu-blue);
+			padding: 14px 10px 16px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+
+		.people .pc img {
+			width: 100%;
+			max-width: 132px;
+			aspect-ratio: 3 / 4;
+			object-fit: cover;
+			object-position: top center;
+			border-radius: 8px;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+			margin: 0;
+		}
+
+		.people .pc .nm {
+			font-weight: 700;
+			font-size: 0.56em;
+			color: var(--ztu-blue);
+			margin-top: 10px;
+			line-height: 1.25;
+		}
+
+		.people .pc .rl {
+			font-size: 0.46em;
+			color: #555;
+			margin-top: 5px;
+			line-height: 1.3;
+		}
+
+		.people.two {
+			gap: 40px;
+			margin-top: 26px;
+		}
+
+		.people.two .pc {
+			max-width: 260px;
+			padding: 20px 18px 22px;
+		}
+
+		.people.two .pc img {
+			max-width: 176px;
+		}
+
+		.people.two .pc .nm {
+			font-size: 0.72em;
+		}
+
+		.people.two .pc .rl {
+			font-size: 0.56em;
+		}
+
 		/* ---- Ombudsman card ---- */
 		.omb {
 			display: flex;
@@ -397,7 +467,7 @@
 					<li>Особливості навчання цього року: графік, сесії, канікули, практики</li>
 					<li>Академічна доброчесність</li>
 					<li>Академічна мобільність</li>
-					<li>Хто є хто в університеті: підрозділи та керівні особи</li>
+					<li>Керівництво факультету та кафедри</li>
 					<li>Куди звертатися у проблемних ситуаціях</li>
 					<li>Неформальна освіта та перезарахування</li>
 					<li>Дії під час повітряної тривоги</li>
@@ -673,29 +743,46 @@
 				</div>
 			</section>
 
-			<!-- 7. Хто є хто в університеті -->
+			<!-- 7. Керівництво факультету -->
 			<section>
-				<h2 style="text-align: center; margin-bottom: 8px;">Хто є хто в університеті</h2>
-				<div class="org">
-					<div class="lvl">
-						<div class="box top"><b>Ректор</b><br><span class="ph">[ПІБ]</span></div>
+				<h2 style="text-align: center; margin-bottom: 4px;">Керівництво факультету (ФІКТ)</h2>
+				<div class="people">
+					<div class="pc">
+						<img src="examples/assets/fac_nikitchuk.png" alt="Нікітчук Тетяна Миколаївна">
+						<p class="nm">Нікітчук Тетяна Миколаївна</p>
+						<p class="rl">Декан факультету</p>
 					</div>
-					<div class="conn"></div>
-					<div class="lvl">
-						<div class="box"><b>Проректори</b><br>з НПР, наукової, АГ роботи</div>
-						<div class="box"><b>Ректорат</b><br>колегіальний орган</div>
+					<div class="pc">
+						<img src="examples/assets/fac_fant.png" alt="Фант Микола Олександрович">
+						<p class="nm">Фант Микола Олександрович</p>
+						<p class="rl">Перший заступник декана</p>
 					</div>
-					<div class="conn"></div>
-					<div class="lvl">
-						<div class="box unit"><b>НМВ</b><br>навчально-методичний відділ</div>
-						<div class="box unit"><b>Деканат ФІКТ</b><br>декан, заступники</div>
-						<div class="box unit"><b>Бухгалтерія</b><br>стипендії, фінанси</div>
-						<div class="box unit"><b>Інші служби</b><br><span class="ph">[відділи]</span></div>
+					<div class="pc">
+						<img src="examples/assets/fac_furihata.png" alt="Фуріхата Денис Вікторович">
+						<p class="nm">Фуріхата Денис Вікторович</p>
+						<p class="rl">Заступник із молодіжної політики</p>
 					</div>
-					<div class="conn"></div>
-					<div class="lvl">
-						<div class="box"><b>Кафедра ІПЗ</b> — завідувач кафедри</div>
-						<div class="box"><b>Гарант ОП</b> · куратори груп</div>
+					<div class="pc">
+						<img src="examples/assets/fac_bolotina.jpg" alt="Болотіна Вікторія Василівна">
+						<p class="nm">Болотіна Вікторія Василівна</p>
+						<p class="rl">Заступник із міжнародної політики та проєктів</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- 7б. Кафедра ІПЗ -->
+			<section>
+				<h2 style="text-align: center; margin-bottom: 4px;">Кафедра інженерії програмного забезпечення</h2>
+				<div class="people two">
+					<div class="pc">
+						<img src="examples/assets/kaf_vakaliuk.png" alt="Вакалюк Тетяна Анатоліївна">
+						<p class="nm">Вакалюк Тетяна Анатоліївна</p>
+						<p class="rl">Завідувач кафедри</p>
+					</div>
+					<div class="pc">
+						<img src="examples/assets/kaf_savitsky.png" alt="Савіцький Роман Святославович">
+						<p class="nm">Савіцький Роман Святославович</p>
+						<p class="rl">Заступник завідувача кафедри</p>
 					</div>
 				</div>
 			</section>
