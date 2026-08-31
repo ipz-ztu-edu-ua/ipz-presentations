@@ -215,6 +215,66 @@
             color: var(--ztu-orange);
         }
 
+        /* ---- Audience tabs ---- */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+
+        .tab-btn {
+            border: 1px solid var(--line);
+            background: #fff;
+            color: var(--muted);
+            font: inherit;
+            font-weight: 600;
+            font-size: 0.95em;
+            padding: 10px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background .18s, color .18s, border-color .18s, box-shadow .18s;
+        }
+
+        .tab-btn.active {
+            background: var(--ztu-blue);
+            color: #fff;
+            border-color: var(--ztu-blue);
+            box-shadow: 0 6px 16px rgba(34, 74, 152, 0.18);
+        }
+
+        .tab-btn:not(.active):hover {
+            border-color: var(--ztu-blue);
+            color: var(--ztu-blue);
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+            animation: tabfade .25s ease;
+        }
+
+        @keyframes tabfade {
+            from {
+                opacity: 0;
+                transform: translateY(4px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .panel-sub {
+            color: var(--muted);
+            font-size: 0.9em;
+            margin: -8px 0 18px;
+        }
+
         /* ---- Footer ---- */
         footer {
             margin-top: 52px;
@@ -251,6 +311,11 @@
                 font-size: 1.25em;
             }
 
+            .tab-btn {
+                padding: 9px 16px;
+                font-size: 0.86em;
+            }
+
             .card {
                 padding: 18px 44px 18px 18px;
             }
@@ -285,40 +350,72 @@
                 data-en-html="Department of <span class='accent'>Software Engineering</span>">
                 Кафедра <span class="accent">інженерії програмного забезпечення</span>
             </h1>
-            <p class="tagline" data-ua="Засідання та матеріали кафедри"
-                data-en="Department meetings and materials">Засідання та матеріали кафедри</p>
+            <p class="tagline" data-ua="Матеріали кафедри для викладачів і здобувачів"
+                data-en="Department materials for faculty and students">Матеріали кафедри для викладачів і
+                здобувачів</p>
         </header>
 
+        <div class="tabs" role="tablist" aria-label="Аудиторія / Audience">
+            <button type="button" class="tab-btn" data-tab="teacher" data-ua="Для викладачів"
+                data-en="For faculty">Для викладачів</button>
+            <button type="button" class="tab-btn" data-tab="student" data-ua="Для студентів"
+                data-en="For students">Для студентів</button>
+        </div>
+
         <main>
-            <h2 class="section-title" data-ua="Засідання кафедри" data-en="Department meetings">Засідання кафедри
-            </h2>
-            <ul class="cards">
-                <li>
-                    <a class="card" href="feature-info-kafedra-2/">
-                        <div class="card-head">
-                            <h3 data-ua="26 серпня 2026" data-en="26 August 2026">26 серпня 2026</h3>
-                            <span class="badge" data-ua="Протокол № 3" data-en="Minutes No. 3">Протокол № 3</span>
-                        </div>
-                        <p data-ua="Конкурс на заміщення вакантних посад, затвердження робочих програм і методичного забезпечення на 2026/2027 навчальний рік, різне."
-                            data-en="Competitive selection for vacant positions, approval of syllabi and teaching materials for the 2026/2027 academic year, miscellaneous.">
-                            Конкурс на заміщення вакантних посад, затвердження робочих програм і методичного
-                            забезпечення на 2026/2027 навчальний рік, різне.</p>
-                        <span class="arrow" aria-hidden="true">→</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="card" href="feature-info-kafedra/">
-                        <div class="card-head">
-                            <h3 data-ua="12 серпня 2026" data-en="12 August 2026">12 серпня 2026</h3>
-                        </div>
-                        <p data-ua="Кадрові призначення, нова освітня програма, оновлення робочих програм, розподіл обов'язків, нормування наукової діяльності."
-                            data-en="Staff appointments, a new degree programme, syllabi updates, distribution of duties, and research workload standards.">
-                            Кадрові призначення, нова освітня програма, оновлення робочих програм, розподіл
-                            обов'язків, нормування наукової діяльності.</p>
-                        <span class="arrow" aria-hidden="true">→</span>
-                    </a>
-                </li>
-            </ul>
+            <section class="tab-panel" data-panel="teacher">
+                <h2 class="section-title" data-ua="Засідання кафедри" data-en="Department meetings">Засідання
+                    кафедри</h2>
+                <ul class="cards">
+                    <li>
+                        <a class="card" href="feature-info-kafedra-2/">
+                            <div class="card-head">
+                                <h3 data-ua="26 серпня 2026" data-en="26 August 2026">26 серпня 2026</h3>
+                                <span class="badge" data-ua="Протокол № 3" data-en="Minutes No. 3">Протокол №
+                                    3</span>
+                            </div>
+                            <p data-ua="Конкурс на заміщення вакантних посад, затвердження робочих програм і методичного забезпечення на 2026/2027 навчальний рік, різне."
+                                data-en="Competitive selection for vacant positions, approval of syllabi and teaching materials for the 2026/2027 academic year, miscellaneous.">
+                                Конкурс на заміщення вакантних посад, затвердження робочих програм і методичного
+                                забезпечення на 2026/2027 навчальний рік, різне.</p>
+                            <span class="arrow" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="card" href="feature-info-kafedra/">
+                            <div class="card-head">
+                                <h3 data-ua="12 серпня 2026" data-en="12 August 2026">12 серпня 2026</h3>
+                            </div>
+                            <p data-ua="Кадрові призначення, нова освітня програма, оновлення робочих програм, розподіл обов'язків, нормування наукової діяльності."
+                                data-en="Staff appointments, a new degree programme, syllabi updates, distribution of duties, and research workload standards.">
+                                Кадрові призначення, нова освітня програма, оновлення робочих програм, розподіл
+                                обов'язків, нормування наукової діяльності.</p>
+                            <span class="arrow" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="tab-panel" data-panel="student">
+                <h2 class="section-title" data-ua="Зустріч з гарантом"
+                    data-en="Meeting with the guarantor">Зустріч з гарантом</h2>
+                <ul class="cards">
+                    <li>
+                        <a class="card" href="feature-zustrich-garant/">
+                            <div class="card-head">
+                                <h3 data-ua="Зустріч з гарантом ОП" data-en="Meeting with the programme guarantor">
+                                    Зустріч з гарантом ОП</h3>
+                                <span class="badge" data-ua="2026/2027" data-en="2026/2027">2026/2027</span>
+                            </div>
+                            <p data-ua="Орієнтаційна зустріч зі здобувачами: графік навчання, практики, академічна доброчесність, мобільність, куди звертатися та дії під час тривоги."
+                                data-en="Orientation meeting for students: academic calendar, internships, academic integrity, mobility, where to seek help, and air-raid procedures.">
+                                Орієнтаційна зустріч зі здобувачами: графік навчання, практики, академічна
+                                доброчесність, мобільність, куди звертатися та дії під час тривоги.</p>
+                            <span class="arrow" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
         </main>
 
         <footer>
@@ -368,6 +465,31 @@
                 });
             });
             apply(get());
+
+            // ---- Audience tabs ----
+            var TAB = 'ipz-tab';
+            function getTab() {
+                try { return localStorage.getItem(TAB) || 'teacher'; } catch (e) { return 'teacher'; }
+            }
+            function saveTab(v) {
+                try { localStorage.setItem(TAB, v); } catch (e) { }
+            }
+            function applyTab(tab) {
+                document.querySelectorAll('.tab-btn').forEach(function (b) {
+                    b.classList.toggle('active', b.getAttribute('data-tab') === tab);
+                });
+                document.querySelectorAll('.tab-panel').forEach(function (p) {
+                    p.classList.toggle('active', p.getAttribute('data-panel') === tab);
+                });
+            }
+            document.querySelectorAll('.tab-btn').forEach(function (b) {
+                b.addEventListener('click', function () {
+                    var t = b.getAttribute('data-tab');
+                    saveTab(t);
+                    applyTab(t);
+                });
+            });
+            applyTab(getTab());
         })();
     </script>
 </body>
