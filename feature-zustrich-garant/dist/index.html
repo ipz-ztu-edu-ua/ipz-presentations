@@ -263,6 +263,55 @@
 			background: rgba(34, 74, 152, 0.04);
 		}
 
+		/* ---- Ombudsman card ---- */
+		.omb {
+			display: flex;
+			gap: 26px;
+			align-items: center;
+			max-width: 900px;
+			margin: 14px auto 0;
+			background: rgba(34, 74, 152, 0.05);
+			border-left: 5px solid var(--ztu-blue);
+			border-radius: 14px;
+			padding: 20px 26px;
+			text-align: left;
+		}
+
+		.omb img {
+			width: 150px;
+			height: 200px;
+			object-fit: cover;
+			object-position: top center;
+			border-radius: 10px;
+			box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+			flex: 0 0 auto;
+			margin: 0;
+		}
+
+		.omb .p-name {
+			font-weight: 700;
+			font-size: 0.82em;
+			color: var(--ztu-blue);
+		}
+
+		.omb .p-role {
+			font-size: 0.58em;
+			color: #555;
+			margin-top: 4px;
+		}
+
+		.omb .p-contact {
+			font-size: 0.6em;
+			margin-top: 8px;
+		}
+
+		.omb ul {
+			font-size: 0.56em;
+			line-height: 1.55;
+			margin: 10px 0 0;
+			padding-left: 18px;
+		}
+
 		/* ---- Alarm slide ---- */
 		.alarm-banner {
 			background: rgba(229, 52, 31, 0.1);
@@ -381,22 +430,22 @@
 				</table>
 			</section>
 
-			<!-- 5. Академічна доброчесність -->
+			<!-- 5.1 Доброчесність: визначення + цінності -->
 			<section>
 				<h2 style="text-align: center; margin-bottom: 10px;">Академічна доброчесність</h2>
-				<div class="highlight-box" style="font-size:0.66em;">
-					Сукупність <strong>етичних принципів і правил</strong>, якими керуються учасники освітнього
-					процесу: самостійність робіт, посилання на джерела, дотримання авторського права та
-					достовірність результатів.
+				<div class="highlight-box" style="font-size:0.64em;">
+					Частина загальної доброчесності — <strong>цілісний розвиток і виховання чесності</strong>, що
+					згодом проявляється як особиста та соціальна відповідальність упродовж життя.
 				</div>
 				<div class="two-columns" style="font-size:0.6em;">
 					<div>
-						<p style="font-weight:700; color:var(--ztu-blue); margin-bottom:6px;">Що є порушенням</p>
-						<ul style="line-height:1.5;">
-							<li>плагіат і самоплагіат;</li>
-							<li>фабрикація та фальсифікація даних;</li>
-							<li>списування, обман, хабарництво;</li>
-							<li>необ'єктивне оцінювання, тиск на викладача.</li>
+						<p style="font-weight:700; color:var(--ztu-blue); margin-bottom:6px;">Цінності
+							доброчесності</p>
+						<ul style="line-height:1.55;">
+							<li>свідомо діяти правильно та чесно;</li>
+							<li>свобода думки й повага до думок інших;</li>
+							<li>відповідальність за свої дії;</li>
+							<li>компетентність і розвиток знань.</li>
 						</ul>
 					</div>
 					<div>
@@ -415,36 +464,93 @@
 				</div>
 			</section>
 
-			<!-- 5б. Хто відповідає за доброчесність -->
+			<!-- 5.2 Види порушень -->
+			<section>
+				<h2 style="text-align: center; margin-bottom: 6px;">Види порушень</h2>
+				<p style="font-size:0.56em; color:#555; text-align:center; margin:0 0 12px;">Плагіат —
+					оприлюднення чужих результатів чи текстів без зазначення авторства</p>
+				<div class="two-columns" style="font-size:0.58em;">
+					<div>
+						<p style="font-weight:700; color:var(--ztu-blue); margin-bottom:6px;">Види плагіату</p>
+						<ul style="line-height:1.55;">
+							<li><strong>Copy &amp; paste</strong> — чужий текст без змін і без цитування;</li>
+							<li><strong>Shake &amp; paste</strong> — компіляція чужих фрагментів;</li>
+							<li><strong>Idea</strong> — чужі ідеї своїми словами без джерела;</li>
+							<li><strong>Translation</strong> — переклад без посилання.</li>
+						</ul>
+					</div>
+					<div>
+						<p style="font-weight:700; color:var(--ztu-blue); margin-bottom:6px;">Інші порушення</p>
+						<ul style="line-height:1.55;">
+							<li><strong>фабрикація</strong> — вигадування даних;</li>
+							<li><strong>фальсифікація</strong> — зміна наявних даних;</li>
+							<li><strong>списування</strong> — недозволені джерела;</li>
+							<li><strong>несанкціонована допомога</strong> — без дозволу викладача.</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<!-- 5.3 Відповідальність здобувачів -->
+			<section>
+				<h2 style="text-align: center; margin-bottom: 10px;">Відповідальність здобувачів</h2>
+				<p style="font-size:0.58em; color:#555; text-align:center; margin:0 0 14px;">За порушення
+					академічної доброчесності здобувач може отримати:</p>
+				<div class="highlight-box-orange" style="font-size:0.64em; max-width:840px; margin:0 auto;">
+					<ul style="line-height:1.7; padding-left:20px;">
+						<li>повторне проходження оцінювання (контрольна, іспит, залік);</li>
+						<li>повторне проходження освітнього компонента ОП;</li>
+						<li>відрахування із закладу освіти;</li>
+						<li>позбавлення академічної стипендії;</li>
+						<li>позбавлення наданих закладом пільг з оплати навчання.</li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- 5.4 Хто відповідає — Комісії -->
 			<section>
 				<h2 style="text-align: center; margin-bottom: 10px;">Хто відповідає за доброчесність</h2>
-				<div class="highlight-box" style="font-size:0.68em;">
+				<div class="highlight-box" style="font-size:0.66em;">
 					<strong>Комісії з академічної доброчесності, етики та управління конфліктами</strong> —
 					розглядають звернення про порушення, питання етики та конфліктні ситуації.
 				</div>
-				<div class="two-columns" style="font-size:0.62em;">
+				<div class="two-columns" style="font-size:0.6em;">
 					<div>
-						<p style="font-weight:700; color:var(--ztu-blue); margin-bottom:6px;">Що робить комісія</p>
+						<p style="font-weight:700; color:var(--ztu-blue); margin-bottom:6px;">Функції комісії</p>
 						<ul style="line-height:1.5;">
-							<li>розглядає звернення й докази;</li>
-							<li>надає висновки щодо порушень;</li>
-							<li>урегульовує конфлікти та етичні питання.</li>
+							<li>розгляд звернень і доказів;</li>
+							<li>висновки щодо порушень;</li>
+							<li>урегулювання конфліктів та етики.</li>
 						</ul>
 					</div>
 					<div>
 						<div class="highlight-box-green">
 							<p style="font-weight:700; margin-bottom:6px;">Куди звертатися</p>
-							Голова / секретар комісії:<br><span class="ph">[ПІБ, контакт]</span><br>
-							☎ +38 (0412) 24-14-22 · ✉ rector@ztu.edu.ua
+							☎ +38 (0412) 24-14-22<br>✉ rector@ztu.edu.ua<br>
+							<a href="https://ztu.edu.ua/page/387.html" target="_blank" rel="noopener">Врегулювання
+								конфліктних ситуацій</a>
 						</div>
 					</div>
 				</div>
-				<p class="small-text" style="text-align:center; margin-top:12px;">
-					<a href="https://docs.ztu.edu.ua/?mdocs-file=1201" target="_blank" rel="noopener">Положення про
-						Комісії</a> ·
-					<a href="https://ztu.edu.ua/page/387.html" target="_blank" rel="noopener">Врегулювання
-						конфліктних ситуацій</a>
-				</p>
+			</section>
+
+			<!-- 5.5 Омбудсмен -->
+			<section>
+				<h2 style="text-align: center; margin-bottom: 8px;">Антикорупційний уповноважений (омбудсмен)</h2>
+				<div class="omb">
+					<img src="examples/assets/karpunets.jpg" alt="Карпунець Володимир Дмитрович">
+					<div>
+						<p class="p-name">Карпунець Володимир Дмитрович</p>
+						<p class="p-role">Уповноважений з питань запобігання та виявлення корупції</p>
+						<p class="p-contact">✉ kppd_kvd@ztu.edu.ua · Кабінет 231</p>
+						<ul>
+							<li>оцінка корупційних ризиків і заходи їх мінімізації;</li>
+							<li>перевірка повідомлень та захист викривачів;</li>
+							<li>консультації щодо антикорупційного законодавства;</li>
+							<li>виявлення та врегулювання конфлікту інтересів.</li>
+						</ul>
+					</div>
+				</div>
 			</section>
 
 			<!-- 6. Академічна мобільність -->
